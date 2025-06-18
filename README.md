@@ -2,6 +2,10 @@
 
 Landing page moderna y responsiva para Solgas, desarrollada con React, TypeScript, Vite y Tailwind CSS. Inspirada en referencias visuales tipo Apple, con animaciones suaves, diseño limpio y profesional.
 
+## 🚀 Demo en producción
+
+Accede a la página en Vercel: [https://solgas-landing-page.vercel.app/](https://solgas-landing-page.vercel.app/)
+
 ## Características
 
 - Diseño minimalista, limpio y profesional.
@@ -19,36 +23,6 @@ Landing page moderna y responsiva para Solgas, desarrollada con React, TypeScrip
 - [Tailwind CSS](https://tailwindcss.com/)
 - [PostCSS](https://postcss.org/)
 - ESLint para control de calidad de código.
-
-## Instalación y uso
-
-1. Clona el repositorio:
-
-   ```bash
-   git clone https://github.com/ttiziu/solgas-landing-page.git
-   cd solgas-landing-page
-   ```
-
-2. Instala las dependencias:
-
-   ```bash
-   npm install
-   ```
-
-3. Inicia el servidor de desarrollo:
-
-   ```bash
-   npm run dev
-   ```
-
-4. Abre [http://localhost:5173](http://localhost:5173) en tu navegador.
-
-## Scripts útiles
-
-- `npm run dev` — Inicia el entorno de desarrollo.
-- `npm run build` — Genera la versión de producción.
-- `npm run preview` — Previsualiza la build de producción.
-- `npm run lint` — Ejecuta el linter.
 
 ## Estructura del proyecto
 
