@@ -5,7 +5,8 @@ import facebookIcon from "../assets/svg/facebook.svg";
 import instagramIcon from "../assets/svg/instagram.svg";
 import twitterIcon from "../assets/svg/twitter-alt.svg";
 import youtubeIcon from "../assets/svg/youtube.svg";
-import pinterestIcon from "../assets/svg/pinterest.svg"
+import pinterestIcon from "../assets/svg/pinterest.svg";
+import whatsappIcon from "../assets/svg/whatsapp.svg";
 
 const footerLinks = [
   {
@@ -23,51 +24,55 @@ const footerLinks = [
 ];
 
 const socialLinks = [
-  { icon: facebookIcon, label: "Facebook", url: "#" },
-  { icon: instagramIcon, label: "Instagram", url: "#" },
+  { icon: facebookIcon, label: "Facebook", url: "https://www.facebook.com/profile.php?id=61574092783362" },
+  { icon: instagramIcon, label: "Instagram", url: "https://www.instagram.com/distribuidorsolgasperu/" },
   { icon: twitterIcon, label: "Twitter", url: "#" },
   { icon: youtubeIcon, label: "YouTube", url: "#" },
   { icon: pinterestIcon, label: "Pinterest", url: "#" },
+  { icon: whatsappIcon, label: "WhatsApp", url: "https://wa.me/51994733630?text=quiero%20un%20gas%20porfavor" },
 ];
 
 const Footer: React.FC = () => {
   return (
-    <footer className="footer-apple" style={{ background: '#224161' }}>
-      <div className="footer-capsule">
-        <div className="footer-content">
-          <div className="footer-logo-row">
-            <img src={solgasLogo} alt="Solgas logo" className="footer-logo" />
-          </div>
-          <div className="footer-links-row">
-            {footerLinks.map((col) => (
-              <div className="footer-col" key={col.title}>
-                <div className="footer-col-title">{col.title}</div>
-                {col.links.map((link) => (
-                  <div className="footer-link" key={link}>
-                    {link}
-                  </div>
-                ))}
-              </div>
-            ))}
-            <div className="footer-col">
-              <div className="footer-col-title">Redes</div>
-              <div className="footer-socials">
-                {socialLinks.map((social) => (
-                  <a
-                    href={social.url}
-                    key={social.label}
-                    className="footer-social-link"
-                    aria-label={social.label}
-                  >
-                    <img src={social.icon} alt={social.label} />
-                  </a>
-                ))}
-              </div>
+    <footer className="footer-apple">
+      <div className="footer-content">
+        <div className="footer-logo-row" style={{ marginBottom: 32 }}>
+          <img src={solgasLogo} alt="Solgas logo" className="footer-logo" />
+          <span className="footer-brand">SOLGAS</span>
+        </div>
+        <div className="footer-links-row">
+          {footerLinks.map((col) => (
+            <div className="footer-col" key={col.title}>
+              <div className="footer-col-title">{col.title}</div>
+              {col.links.map((link) => (
+                <a className="footer-link" key={link} href="#">
+                  {link}
+                </a>
+              ))}
+            </div>
+          ))}
+          <div className="footer-col">
+            <div className="footer-col-title">Redes</div>
+            <div className="footer-socials">
+              {socialLinks.map((social) => (
+                <a
+                  href={social.url}
+                  key={social.label}
+                  className="footer-social-link"
+                  aria-label={social.label}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src={social.icon} alt={social.label} />
+                </a>
+              ))}
             </div>
           </div>
-          <div className="footer-bottom-row">
-            <span className="footer-copyright">© Solgas 2025</span>
-          </div>
+        </div>
+        <div className="footer-bottom-row">
+          <span className="footer-copyright">
+            © {new Date().getFullYear()} Solgas. Todos los derechos reservados.
+          </span>
         </div>
       </div>
     </footer>
