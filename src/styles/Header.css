@@ -1,0 +1,152 @@
+.header {
+  width: 100%;
+  background: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 40px;
+  box-sizing: border-box;
+  font-family: 'Inter', Arial, sans-serif;
+}
+
+.header__left {
+  display: flex;
+  align-items: center;
+}
+
+.header__logo {
+  height: 40px;
+  margin-right: 96px;
+}
+
+.header__brand {
+  color: #111827;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-right: 192px;
+}
+
+.header__nav {
+  display: flex;
+  gap: 18px;
+  margin-left: 0;
+}
+
+.header__nav-link {
+  color: #111827;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s, background 0.2s, border-radius 0.2s, padding 0.2s;
+  padding: 10px 28px;
+  border-radius: 2rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: transparent;
+}
+
+.header__nav-link:hover,
+.header__nav-link:focus {
+  background: #EF7F1A;
+  color: #fff;
+  border-radius: 2rem;
+}
+
+.header__nav-link:hover .header__icon-container,
+.header__nav-link:focus .header__icon-container {
+  opacity: 1;
+  width: 20px;
+  margin-right: 8px;
+}
+
+.header__nav-link:hover .header__icon,
+.header__nav-link:focus .header__icon {
+  filter: brightness(0) invert(1);
+}
+
+.header__right {
+  display: flex;
+  align-items: center;
+}
+
+.header__call-btn {
+  background: #EF7F1A;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  border-radius: 2rem;
+  padding: 12px 36px;
+  cursor: pointer;
+  transition: background 0.2s, padding 0.2s;
+  display: flex;
+  align-items: center;
+  position: relative;
+  text-decoration: none;
+}
+
+.header__call-btn:hover {
+  background: #d96e13;
+  padding-left: 24px;
+  padding-right: 48px;
+}
+
+.header__call-btn:hover,
+.header__call-btn:focus {
+  color: #fff;
+}
+
+.header__call-btn:focus,
+.header__call-btn:active {
+  outline: none;
+  text-decoration: none;
+}
+
+.header__call-link {
+  text-decoration: none;
+}
+
+.header__call-btn .header__icon-container {
+  opacity: 0;
+  width: 0;
+  margin-right: 0;
+  transition: opacity 0.4s cubic-bezier(0.4,0,0.2,1), width 0.4s cubic-bezier(0.4,0,0.2,1), margin-right 0.4s cubic-bezier(0.4,0,0.2,1);
+  overflow: hidden;
+}
+
+.header__call-btn:hover .header__icon-container {
+  opacity: 1;
+  width: 20px;
+  margin-right: 8px;
+}
+
+.header__icon-container {
+  display: inline-block;
+  vertical-align: middle;
+  width: 0;
+  height: 20px;
+  opacity: 0;
+  margin-right: 0;
+  transition: opacity 0.4s cubic-bezier(0.4,0,0.2,1), width 0.4s cubic-bezier(0.4,0,0.2,1), margin-right 0.4s cubic-bezier(0.4,0,0.2,1);
+  overflow: hidden;
+}
+
+.header__nav-link:hover .header__icon-container,
+.header__nav-link:focus .header__icon-container {
+  opacity: 1;
+  width: 20px;
+  margin-right: 8px;
+}
+
+.header__icon {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+.header__call-btn:hover .header__icon,
+.header__call-btn:focus .header__icon {
+  filter: brightness(0) invert(1);
+}
