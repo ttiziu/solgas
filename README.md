@@ -1,54 +1,68 @@
-# React + TypeScript + Vite
+# Solgas Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Landing page moderna y responsiva para Solgas, desarrollada con React, TypeScript, Vite y Tailwind CSS. Inspirada en referencias visuales tipo Apple, con animaciones suaves, diseño limpio y profesional.
 
-Currently, two official plugins are available:
+## Características
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Diseño minimalista, limpio y profesional.
+- Secciones: Testimonios, Preguntas Frecuentes (FAQ), Footer, Carrusel de Marcas, Beneficios, Header y más.
+- Animaciones suaves al hacer scroll y en acordeones.
+- Totalmente responsiva y optimizada para dispositivos móviles.
+- Integración de imágenes y SVGs optimizados.
+- Código modular y organizado por componentes.
 
-## Expanding the ESLint configuration
+## Tecnologías
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- [React](https://react.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Vite](https://vitejs.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [PostCSS](https://postcss.org/)
+- ESLint para control de calidad de código.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Instalación y uso
+
+1. Clona el repositorio:
+
+   ```bash
+   git clone https://github.com/ttiziu/solgas-landing-page.git
+   cd solgas-landing-page
+   ```
+
+2. Instala las dependencias:
+
+   ```bash
+   npm install
+   ```
+
+3. Inicia el servidor de desarrollo:
+
+   ```bash
+   npm run dev
+   ```
+
+4. Abre [http://localhost:5173](http://localhost:5173) en tu navegador.
+
+## Scripts útiles
+
+- `npm run dev` — Inicia el entorno de desarrollo.
+- `npm run build` — Genera la versión de producción.
+- `npm run preview` — Previsualiza la build de producción.
+- `npm run lint` — Ejecuta el linter.
+
+## Estructura del proyecto
+
+```
+src/
+  components/      # Componentes reutilizables (Footer, Header, FAQ, etc.)
+  assets/          # Imágenes y SVGs
+  styles/          # Archivos CSS y Tailwind
+  layouts/         # Layouts generales
+  lib/             # Utilidades
+  main.tsx         # Entry point
+public/            # Archivos estáticos (logo, videos)
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Créditos
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+Desarrollado por Jherry Paolo Visalot Girón. Inspirado en referencias visuales de Apple y feedback de usuarios.
