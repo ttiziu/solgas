@@ -1,12 +1,24 @@
 .header {
   width: 100%;
-  background: #FFFFFF;
+  background: #FFFFFFCC;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 18px 40px;
   box-sizing: border-box;
   font-family: 'Inter', Arial, sans-serif;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  backdrop-filter: blur(12px) saturate(1.2);
+  transition: box-shadow 0.3s cubic-bezier(.4,0,.2,1), background 0.3s cubic-bezier(.4,0,.2,1);
+  box-shadow: 0 0 0 transparent;
+}
+
+.header--scrolled {
+  box-shadow: 0 2px 16px 0 rgba(34,65,97,0.08);
+  background: #FFFFFFF2;
 }
 
 .header__left {

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import '../styles/Header.css';
 import logo from '../assets/images/solgas-logo-azul.png';
 import inicioIcon from '../assets/svg/inicio.svg';
@@ -9,6 +9,19 @@ import contactoIcon from '../assets/svg/contacto.svg';
 import llamadaIcon from '../assets/svg/llamada.svg';
 
 const Header: React.FC = () => {
+  useEffect(() => {
+    const handleScroll = () => {
+      const header = document.querySelector('.header');
+      if (window.scrollY > 12) {
+        header?.classList.add('header--scrolled');
+      } else {
+        header?.classList.remove('header--scrolled');
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <header className="header">
       <div className="header__left">
