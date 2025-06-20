@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/Header.css';
 import logo from '../assets/images/solgas-logo-azul.png';
 import inicioIcon from '../assets/svg/inicio.svg';
@@ -27,26 +28,26 @@ const Header: React.FC = () => {
       <div className="header__left">
         <img src={logo} alt="Solgas Logo" className="header__logo" />
         <nav className="header__nav">
-          <a href="#inicio" className="header__nav-link">
+          <Link to="/" className="header__nav-link">
             <span className="header__icon-container"><img src={inicioIcon} alt="Inicio" className="header__icon" /></span>
             Inicio
-          </a>
-          <a href="#productos" className="header__nav-link">
+          </Link>
+          <Link to="/productos" className="header__nav-link">
             <span className="header__icon-container"><img src={productosIcon} alt="Productos" className="header__icon" /></span>
             Productos
-          </a>
-          <a href="#servicios" className="header__nav-link">
+          </Link>
+          <Link to="/servicios" className="header__nav-link">
             <span className="header__icon-container"><img src={serviciosIcon} alt="Servicios" className="header__icon" /></span>
             Servicios
-          </a>
-          <a href="#soporte" className="header__nav-link">
+          </Link>
+          <Link to="/soporte" className="header__nav-link">
             <span className="header__icon-container"><img src={soporteIcon} alt="Soporte" className="header__icon" /></span>
             Soporte
-          </a>
-          <a href="#contacto" className="header__nav-link">
+          </Link>
+          <Link to="/contacto" className="header__nav-link">
             <span className="header__icon-container"><img src={contactoIcon} alt="Contacto" className="header__icon" /></span>
             Contacto
-          </a>
+          </Link>
         </nav>
       </div>
       <div className="header__right">
