@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/Footer.css";
-import solgasLogo from "/icono-solgas-color.png";
+import logoFooter from "../assets/svg/logo-footer.svg";
 import facebookIcon from "../assets/svg/facebook.svg";
 import instagramIcon from "../assets/svg/instagram.svg";
 import twitterIcon from "../assets/svg/twitter-alt.svg";
@@ -37,8 +37,7 @@ const Footer: React.FC = () => {
     <footer className="footer-apple">
       <div className="footer-content">
         <div className="footer-logo-row" style={{ marginBottom: 32 }}>
-          <img src={solgasLogo} alt="Solgas logo" className="footer-logo" />
-          <span className="footer-brand">SOLGAS</span>
+          <img src={logoFooter} alt="Solgas logo" className="footer-logo" />
         </div>
         <div className="footer-links-row">
           {footerLinks.map((col) => (

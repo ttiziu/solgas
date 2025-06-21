@@ -114,10 +114,6 @@ const Testimonials = () => {
 				Testimonios de confianza
 			</h2>
 			<div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
-				<div className="fade-edges">
-					<div className="fade-edge left" />
-					<div className="fade-edge right" />
-				</div>
 				<Marquee pauseOnHover className="[--duration:20s] gap-8 px-2">
 					{firstRow.map((review) => (
 						<ReviewCard key={review.username} {...review} />
