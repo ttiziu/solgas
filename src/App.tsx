@@ -9,7 +9,7 @@ import Contacto from './pages/Contacto';
 import SpinnerPage from './pages/SpinnerPage';
 import { Spinner } from './components/ui/spinner';
 import './styles/globals.css';
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 function AppRoutes() {
   const location = useLocation();
@@ -35,7 +35,7 @@ function AppRoutes() {
     <>
       <div className={`app-blur-overlay${blur ? ' app-blur-active' : ''}`}></div>
       <div className={`app-spinner-overlay${!loading && !blur ? ' app-spinner-overlay-leave' : ''}`} style={{display: hideSpinner ? 'none' : undefined}}>
-        {loading && <Spinner size="size-8" />}
+        {loading && <Spinner size="size-8" color="#222" />} {/* Color oscuro visible */}
       </div>
       {!loading && (
         <Routes>
