@@ -1,0 +1,102 @@
+.why-solgas-section {
+  background: none;
+  padding: 0 0 64px 0;
+  margin-top: 0;
+  min-height: unset;
+}
+
+.why-solgas-title {
+  font-size: 3rem;
+  font-weight: 400;
+  color: #aab2c8;
+  text-align: center;
+  margin: 0 0 40px 0;
+  letter-spacing: 1px;
+  font-family: 'Inter', Arial, sans-serif;
+}
+
+.why-solgas-cards {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: stretch;
+}
+
+.why-solgas-card {
+  background: #fff;
+  border: 2px solid #ff9100;
+  border-radius: 20px;
+  box-shadow: 0 2px 16px 0 rgba(34,65,97,0.07);
+  padding: 24px 24px 32px 24px;
+  min-width: 280px;
+  max-width: 340px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow 0.3s, border-color 0.3s;
+  min-height: 260px;
+  max-height: 340px;
+  /* Limita el alto máximo para mantener proporción elegante */
+  box-sizing: border-box;
+}
+.why-solgas-card:hover {
+  box-shadow: 0 4px 24px 0 rgba(34,65,97,0.13);
+  border-color: #ef7f1a;
+}
+.why-solgas-card-number {
+  width: 56px;
+  height: 56px;
+  background: #f1f5f9;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a2340;
+  margin-bottom: 1.2rem;
+  border: 4px solid #e5e7eb;
+  transition: background 0.3s, border-color 0.3s, color 0.3s;
+}
+.why-solgas-card:hover .why-solgas-card-number {
+  background: #ff9100;
+  border-color: #ff9100;
+  color: #fff;
+}
+.why-solgas-card-icon-bg {
+  background: #eaf0fa;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.2rem;
+}
+.why-solgas-card-icon {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+.why-solgas-card-text {
+  font-size: 1.1rem;
+  color: #1a2340;
+  margin-top: 0.5rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+}
+@media (max-width: 900px) {
+  .why-solgas-cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .why-solgas-card {
+    width: 100%;
+    max-width: 350px;
+  }
+}

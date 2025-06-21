@@ -26,8 +26,8 @@ function AppRoutes() {
       setTimeout(() => {
         setBlur(false);
         setHideSpinner(true);
-      }, 400); // tiempo para suavizar salida (antes 700)
-    }, 600); // Duración del spinner (antes 900)
+      }, 250); // tiempo para suavizar salida (antes 400)
+    }, 350); // Duración del spinner (antes 600)
     return () => clearTimeout(timeout);
   }, [location]);
 
