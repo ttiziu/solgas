@@ -61,6 +61,9 @@
   min-height: 48px;
   font-family: 'Inter', Arial, sans-serif;
 }
+.producto-desc-responsive {
+  display: none;
+}
 .producto-btn {
   background: #ff9100;
   color: #fff;
@@ -84,7 +87,6 @@
   padding-left: 3vw;
   padding-right: 3vw;
 }
-
 .cobertura-title {
   font-size: 3rem;
   font-weight: 400;
@@ -94,37 +96,6 @@
   letter-spacing: 1px;
   font-family: 'Inter', Arial, sans-serif;
 }
-
-
-.cobertura-carousel::-webkit-scrollbar {
-  height: 8px;
-  background: transparent;
-}
-.cobertura-carousel::-webkit-scrollbar-thumb {
-  background: #e0e0e0;
-  border-radius: 4px;
-}
-
-.cobertura-slide {
-  background: #fff;
-  border-radius: 1.2rem;
-  box-shadow: 0 2px 16px 0 rgba(0,0,0,0.04);
-  padding: 1.2rem 2.5rem;
-  font-size: 1.1rem;
-  color: #333;
-  min-width: 180px;
-  text-align: center;
-  transition: box-shadow 0.2s, transform 0.2s;
-  flex: 0 0 auto;
-  font-weight: 500;
-  letter-spacing: 0.01em;
-  scroll-snap-align: center;
-}
-.cobertura-slide:hover {
-  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.08);
-  transform: translateY(-2px) scale(1.03);
-}
-
 .cobertura-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));

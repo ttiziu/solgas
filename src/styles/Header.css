@@ -36,14 +36,6 @@
   margin-right: 96px;
 }
 
-.header__brand {
-  color: #111827;
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 1px;
-  margin-right: 192px;
-}
-
 .header__nav {
   display: flex;
   gap: 18px;
@@ -148,13 +140,6 @@
   margin-right: 0;
   transition: opacity 0.4s cubic-bezier(0.4,0,0.2,1), width 0.4s cubic-bezier(0.4,0,0.2,1), margin-right 0.4s cubic-bezier(0.4,0,0.2,1);
   overflow: hidden;
-}
-
-.header__nav-link:hover .header__icon-container,
-.header__nav-link:focus .header__icon-container {
-  opacity: 1;
-  width: 20px;
-  margin-right: 8px;
 }
 
 .header__icon {
