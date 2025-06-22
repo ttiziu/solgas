@@ -96,25 +96,51 @@
   background: #f8fafc;
   border-radius: 18px;
   box-shadow: 0 2px 8px 0 rgba(34,65,97,0.04);
-  padding: 24px 32px;
-  min-width: 210px;
-  max-width: 260px;
+  padding: 24px 64px;
+  min-width: 400px;
+  max-width: 520px;
   display: flex;
   flex-direction: column;
   align-items: center;
   transition: box-shadow 0.2s, transform 0.2s;
-  border: none;
+  border: 2px solid #ff9100;
 }
 .metodo-pago-minimal-card:hover {
   box-shadow: 0 6px 24px 0 rgba(34,65,97,0.10);
   transform: translateY(-4px) scale(1.03);
 }
+.metodo-pago-minimal-card.bcp {
+  border-color: #ff9100;
+}
+.metodo-pago-minimal-card.bbva {
+  border-color: #ff9100;
+}
+.metodo-pago-minimal-card.yape {
+  border-color: #ff9100;
+}
+.metodo-pago-minimal-card.plin {
+  border-color: #ff9100;
+}
+.metodo-pago-minimal-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 60px;
+  margin-bottom: 18px;
+}
 .metodo-pago-minimal-icon {
   width: 54px;
   height: 54px;
-  margin-bottom: 18px;
   object-fit: contain;
   filter: grayscale(0.2) brightness(0.95);
+}
+.metodo-pago-minimal-icon.banco {
+  border: 2px;
+  border-radius: 12px;
+  background: none;
+  padding: 0;
+  box-sizing: border-box;
 }
 .metodo-pago-minimal-info {
   display: flex;
@@ -159,6 +185,108 @@
   display: inline-block;
   vertical-align: middle;
   transition: stroke 0.2s, fill 0.2s;
+}
+.medios-pago-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+.icono-tarjeta-credito-bg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: #f0f2f7;
+  transition: background 0.25s;
+  margin-bottom: 6px;
+}
+.icono-tarjeta-credito-bg:hover {
+  background: #ff9100;
+}
+.icono-tarjeta-credito {
+  width: 28px;
+  height: 28px;
+  filter: grayscale(0.1) brightness(1.1);
+  transition: filter 0.25s;
+}
+.icono-tarjeta-credito-bg:hover .icono-tarjeta-credito {
+  filter: brightness(2) grayscale(0);
+}
+.medios-pago-texto {
+  font-size: 1.08rem;
+  color: #1a2340;
+  font-weight: 500;
+  letter-spacing: 0.1px;
+  font-family: 'Inter', Arial, sans-serif;
+  text-align: center;
+}
+.medios-pago-info-card {
+  background: #fff;
+  border: 2px solid #ff9100;
+  border-radius: 20px;
+  box-shadow: 0 2px 16px 0 rgba(34,65,97,0.07);
+  padding: 28px 36px 22px 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 32px;
+  max-width: 340px;
+  margin-left: auto;
+  margin-right: auto;
+  transition: box-shadow 0.3s, border-color 0.3s;
+}
+.medios-pago-info-card:hover {
+  box-shadow: 0 6px 24px 0 rgba(34,65,97,0.13);
+  border-color: #ef7f1a;
+}
+.bcp-cuentas-flex {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+}
+.bcp-cuenta-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  font-size: 1.05rem;
+  color: #7b7f8a;
+  font-weight: 400;
+  letter-spacing: 0.1px;
+  border-radius: 8px;
+  padding: 2px 6px;
+  word-break: normal;
+  width: 100%;
+  white-space: nowrap;
+  overflow-x: auto;
+}
+.bcp-label {
+  color: #1a2340;
+  font-weight: 600;
+  margin-right: 2px;
+  min-width: 60px;
+  text-align: right;
+}
+.bcp-num {
+  font-family: 'Inter', Arial, monospace;
+  font-size: 1.05rem;
+  color: #7b7f8a;
+  font-weight: 400;
+  letter-spacing: 0.1px;
+  word-break: normal;
+  white-space: nowrap;
+}
+.medios-pago-info-separado {
+  margin-top: 40px;
 }
 @media (max-width: 900px) {
   .metodos-pago-cards {

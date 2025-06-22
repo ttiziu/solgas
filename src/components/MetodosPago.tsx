@@ -1,15 +1,23 @@
 import { useState } from 'react';
-import visa from '../assets/svg/visa.svg';
-import mastercard from '../assets/svg/mastercard.svg';
 import yape from '../assets/svg/yape.svg';
 import plin from '../assets/svg/plin.svg';
+import bcp from '../assets/images/bcp-icono-logo.webp';
+import bbva from '../assets/images/bbva-icono-logo.webp';
 import '../styles/MetodosPago.css';
+import MediosPagoInfo from './MediosPagoInfo';
 
-const metodos = [
-  { icon: visa, nombre: 'Visa', alt: 'Visa', cuenta: 'N° 1234 5678 9012 3456' },
-  { icon: mastercard, nombre: 'Mastercard', alt: 'Mastercard', cuenta: 'N° 9876 5432 1098 7654' },
-  { icon: yape, nombre: 'Yape', alt: 'Yape', cuenta: 'Cel: 994 733 630 (Inversiones GDH)' },
-  { icon: plin, nombre: 'Plin', alt: 'Plin', cuenta: 'Cel: 953 520 432 (Hugo Visalot)' },
+type MetodoPago = {
+  icon: string;
+  nombre: string;
+  alt: string;
+  cuenta: string | { cuenta: string; cci: string };
+};
+
+const metodos: MetodoPago[] = [
+  { icon: bcp, nombre: 'Inversiones GDH', alt: 'BCP', cuenta: { cuenta: '194-9920324-0-91', cci: '002-19400992032409198' } },
+  { icon: bbva, nombre: 'Hugo Visalot', alt: 'BBVA', cuenta: { cuenta: '0011-0123-4567890123', cci: '002-01100123456789012319' } },
+  { icon: yape, nombre: 'Inversiones GDH', alt: 'Yape', cuenta: 'Cel: 994 733 630' },
+  { icon: plin, nombre: 'Hugo Visalot', alt: 'Plin', cuenta: 'Cel: 953 520 432' },
 ];
 
 function CopyIcon({ copied }: { copied: boolean }) {
@@ -36,25 +44,84 @@ export default function MetodosPago() {
       <h2 className="metodos-pago-title">Métodos de Pago</h2>
       <div className="metodos-pago-grid">
         {metodos.map((m, idx) => (
-          <div className="metodo-pago-minimal-card" key={idx}>
-            <img src={m.icon} alt={m.alt} className="metodo-pago-minimal-icon" />
+          <div
+            className={
+              'metodo-pago-minimal-card' +
+              (m.alt === 'BCP' ? ' bcp' : '') +
+              (m.alt === 'BBVA' ? ' bbva' : '') +
+              (m.alt === 'Yape' ? ' yape' : '') +
+              (m.alt === 'Plin' ? ' plin' : '')
+            }
+            key={idx}
+          >
+            <div className="metodo-pago-minimal-icon-wrapper">
+              <img
+                src={m.icon}
+                alt={m.alt}
+                className={
+                  'metodo-pago-minimal-icon' +
+                  (m.alt === 'BCP' || m.alt === 'BBVA' ? ' banco' : '')
+                }
+              />
+            </div>
             <div className="metodo-pago-minimal-info">
               <span className="metodo-pago-minimal-nombre">{m.nombre}</span>
               <span className="metodo-pago-minimal-cuenta">
-                {m.cuenta}
-                <button
-                  className="copy-btn"
-                  aria-label="Copiar cuenta"
-                  onClick={() => handleCopy(m.cuenta, idx)}
-                  tabIndex={0}
-                >
-                  <CopyIcon copied={copiedIdx === idx} />
-                </button>
+                {m.cuenta && (
+                  <>
+                    {(m.alt === 'BCP' || m.alt === 'BBVA') && typeof m.cuenta !== 'string' ? (
+                      <div className="bcp-cuentas-flex">
+                        <div className="bcp-cuenta-item">
+                          <span className="bcp-label">Cuenta:</span>
+                          <span className="bcp-num">{m.cuenta.cuenta}</span>
+                          <button
+                            className="copy-btn"
+                            aria-label={`Copiar cuenta ${m.alt}`}
+                            onClick={() => typeof m.cuenta !== 'string' ? handleCopy(m.cuenta.cuenta, idx) : undefined}
+                            tabIndex={0}
+                          >
+                            <CopyIcon copied={copiedIdx === idx} />
+                          </button>
+                        </div>
+                        <div className="bcp-cuenta-item">
+                          <span className="bcp-label">CCI:</span>
+                          <span className="bcp-num">{m.cuenta.cci}</span>
+                          <button
+                            className="copy-btn"
+                            aria-label={`Copiar CCI ${m.alt}`}
+                            onClick={() => typeof m.cuenta !== 'string' ? handleCopy(m.cuenta.cci, idx + 100) : undefined}
+                            tabIndex={0}
+                          >
+                            <CopyIcon copied={copiedIdx === idx + 100} />
+                          </button>
+                        </div>
+                      </div>
+                    ) : (
+                      <div className="bcp-cuentas-flex">
+                        <div className="bcp-cuenta-item">
+                          <span className="bcp-label">Cel:</span>
+                          <span className="bcp-num">{typeof m.cuenta === 'string' ? m.cuenta.replace('Cel: ', '') : ''}</span>
+                          {typeof m.cuenta === 'string' && (
+                            <button
+                              className="copy-btn"
+                              aria-label="Copiar celular"
+                              onClick={() => typeof m.cuenta === 'string' ? handleCopy(m.cuenta.replace(/.*?:\s*/, ''), idx) : undefined}
+                              tabIndex={0}
+                            >
+                              <CopyIcon copied={copiedIdx === idx} />
+                            </button>
+                          )}
+                        </div>
+                      </div>
+                    )}
+                  </>
+                )}
               </span>
             </div>
           </div>
         ))}
       </div>
+      <MediosPagoInfo className="medios-pago-info-separado" />
     </section>
   );
 }
