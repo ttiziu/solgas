@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/Header.css';
 import logo from '../assets/images/solgas-logo-azul.png';
@@ -10,7 +10,7 @@ import llamadaIcon from '../assets/svg/llamada.svg';
 import menuIcon from '../assets/svg/menu-hamburguesa.svg';
 
 const Header: React.FC = () => {
-  const [menuOpen, setMenuOpen] = React.useState(false);
+  const [menuOpen, setMenuOpen] = useState<boolean>(false);
 
   useEffect(() => {
     const handleScroll = () => {

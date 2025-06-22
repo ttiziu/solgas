@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react';
+import gsap from 'gsap';
 import solgas10kg from '../assets/images/solgas10kg.webp';
 import solgas45kg from '../assets/images/solgas45kg.webp';
 import valvula from '../assets/images/valvula.webp';
-import '../styles/Productos.css';
-import gsap from 'gsap';
 import surquilloImg from '../assets/images-distritos/surquillo.jpg';
 import surcoImg from '../assets/images-distritos/surco.jpg';
 import sanborjaImg from '../assets/images-distritos/sanborja.jpg';
@@ -15,8 +14,22 @@ import pueblolibreImg from '../assets/images-distritos/pueblolibre.jpg';
 import jesusmariaImg from '../assets/images-distritos/jesusmaria.jpg';
 import magdalenadelmarImg from '../assets/images-distritos/magdalenadelmar.jpg';
 import linceImg from '../assets/images-distritos/lince.jpg';
+import '../styles/Productos.css';
 
-const productos = [
+// Tipos para productos y distritos
+interface Producto {
+  nombre: string;
+  img: string;
+  descripcion: string;
+  cta: string;
+}
+
+interface Distrito {
+  nombre: string;
+  img: string;
+}
+
+const productos: Producto[] = [
   {
     nombre: 'Balón de 10kg',
     img: solgas10kg,
@@ -37,7 +50,7 @@ const productos = [
   },
 ];
 
-const distritos = [
+const distritos: Distrito[] = [
   { nombre: 'Surquillo', img: surquilloImg },
   { nombre: 'Surco', img: surcoImg },
   { nombre: 'San Borja', img: sanborjaImg },

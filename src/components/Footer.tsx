@@ -8,7 +8,18 @@ import youtubeIcon from "../assets/svg/youtube.svg";
 import pinterestIcon from "../assets/svg/pinterest.svg";
 import whatsappIcon from "../assets/svg/whatsapp.svg";
 
-const footerLinks = [
+interface FooterLink {
+  title: string;
+  links: string[];
+}
+
+interface SocialLink {
+  icon: string;
+  label: string;
+  url: string;
+}
+
+const footerLinks: FooterLink[] = [
   {
     title: "Producto",
     links: ["Comprar", "Seguridad", "Solicitar para empresa"],
@@ -23,7 +34,7 @@ const footerLinks = [
   },
 ];
 
-const socialLinks = [
+const socialLinks: SocialLink[] = [
   { icon: facebookIcon, label: "Facebook", url: "https://www.facebook.com/profile.php?id=61574092783362" },
   { icon: instagramIcon, label: "Instagram", url: "https://www.instagram.com/distribuidorsolgasperu/" },
   { icon: twitterIcon, label: "Twitter", url: "#" },
@@ -58,9 +69,9 @@ const Footer: React.FC = () => {
                   href={social.url}
                   key={social.label}
                   className="footer-social-link"
-                  aria-label={social.label}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label={social.label}
                 >
                   <img src={social.icon} alt={social.label} />
                 </a>
@@ -70,7 +81,7 @@ const Footer: React.FC = () => {
         </div>
         <div className="footer-bottom-row">
           <span className="footer-copyright">
-            © {new Date().getFullYear()} Solgas. Todos los derechos reservados.
+            © {new Date().getFullYear()} Distribuidor Solgas Perú. Todos los derechos reservados.
           </span>
         </div>
       </div>
