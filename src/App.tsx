@@ -4,7 +4,6 @@ import Main from './components/Main';
 import Footer from './components/Footer';
 import Productos from './pages/Productos';
 import Servicios from './pages/Servicios';
-import Soporte from './pages/Soporte';
 import Contacto from './pages/Contacto';
 import SpinnerPage from './pages/SpinnerPage';
 import { Spinner } from './components/ui/spinner';
@@ -42,7 +41,6 @@ function AppRoutes() {
           <Route path="/" element={<Main />} />
           <Route path="/productos" element={<Productos />} />
           <Route path="/servicios" element={<Servicios />} />
-          <Route path="/soporte" element={<Soporte />} />
           <Route path="/contacto" element={<Contacto />} />
           <Route path="/spinner" element={<SpinnerPage />} />
         </Routes>

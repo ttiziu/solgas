@@ -16,7 +16,7 @@ const faqs = [
   },
   {
     question: "¿Dónde puedo hacer seguimiento a mi pedido?",
-    answer: "Puedes llamar al número de soporte o revisar tu correo con el tracking."
+    answer: "Puedes llamar al número de atención o revisar tu correo con el tracking."
   },
   {
     question: "¿Qué formas de pago aceptan?",

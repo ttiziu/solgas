@@ -11,7 +11,7 @@ import whatsappIcon from "../assets/svg/whatsapp.svg";
 const footerLinks = [
   {
     title: "Producto",
-    links: ["Comprar", "Seguridad", "Soporte", "Solicitar para empresa"],
+    links: ["Comprar", "Seguridad", "Solicitar para empresa"],
   },
   {
     title: "Recursos",

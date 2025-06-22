@@ -15,14 +15,22 @@ Accede a la página en Vercel: [https://solgas-landing-page.vercel.app/](https:/
 - Integración de imágenes y SVGs optimizados.
 - Código modular y organizado por componentes.
 
-## Tecnologías
+## Tecnologías y frameworks principales
 
-- [React](https://react.dev/)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Vite](https://vitejs.dev/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [PostCSS](https://postcss.org/)
-- ESLint para control de calidad de código.
+- [React](https://react.dev/) (librería principal para UI)
+- [TypeScript](https://www.typescriptlang.org/) (tipado estático)
+- [Vite](https://vitejs.dev/) (bundler y servidor de desarrollo)
+- [Tailwind CSS](https://tailwindcss.com/) (utilidades CSS para estilos rápidos y responsivos)
+- [PostCSS](https://postcss.org/) (procesador de CSS)
+- [GSAP](https://gsap.com/) (animaciones avanzadas)
+- [React Router](https://reactrouter.com/) (ruteo de páginas)
+- ESLint (linter de código)
+
+### Extras y recursos
+
+- SVGs personalizados y optimizados
+- Imágenes WebP y PNG
+- CSS puro para detalles visuales y responsividad avanzada
 
 ## Estructura del proyecto
 

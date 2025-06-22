@@ -69,39 +69,41 @@ const Productos: React.FC = () => {
   }, []);
 
   return (
-    <section className="productos-section">
-      <h1 className="productos-title">Productos hogar</h1>
-      <div className="productos-grid">
-        {productos.map((p) => (
-          <div key={p.nombre} className="producto-card">
-            <img src={p.img} alt={p.nombre} className="producto-img" />
-            <div className="producto-nombre">{p.nombre}</div>
-            <div className="producto-desc">{p.descripcion}</div>
-            <a
-              className="producto-btn"
-              href="https://wa.me/51994733630"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {p.cta}
-            </a>
-          </div>
-        ))}
-      </div>
-      <section className="cobertura-section">
-        <h2 className="cobertura-title">Conoce nuestra cobertura</h2>
-        <div className="cobertura-grid">
-          {distritos.map((d) => (
-            <div className="cobertura-card" key={d.nombre}>
-              <div className="cobertura-img-wrap">
-                <img src={d.img} alt={d.nombre} className="cobertura-img" />
-              </div>
-              <div className="cobertura-nombre">{d.nombre}</div>
+    <div className="servicios-bg">
+      <section className="productos-section">
+        <h1 className="productos-title">Productos hogar</h1>
+        <div className="productos-grid">
+          {productos.map((p) => (
+            <div key={p.nombre} className="producto-card">
+              <img src={p.img} alt={p.nombre} className="producto-img" />
+              <div className="producto-nombre">{p.nombre}</div>
+              <div className="producto-desc producto-desc-responsive">{p.descripcion}</div>
+              <a
+                className="producto-btn"
+                href="https://wa.me/51994733630"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {p.cta}
+              </a>
             </div>
           ))}
         </div>
+        <section className="cobertura-section">
+          <h2 className="cobertura-title">Conoce nuestra cobertura</h2>
+          <div className="cobertura-grid">
+            {distritos.map((d) => (
+              <div className="cobertura-card" key={d.nombre}>
+                <div className="cobertura-img-wrap">
+                  <img src={d.img} alt={d.nombre} className="cobertura-img" />
+                </div>
+                <div className="cobertura-nombre">{d.nombre}</div>
+              </div>
+            ))}
+          </div>
+        </section>
       </section>
-    </section>
+    </div>
   );
 };
 

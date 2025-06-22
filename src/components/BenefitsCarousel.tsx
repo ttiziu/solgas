@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from 'react';
 import '../styles/BenefitsCarousel.css';
 import entregaRapidaIcon from '../assets/svg/entrega-rapida.svg';
 import seguridadIcon from '../assets/svg/seguridad.svg';
-import soporteIcon from '../assets/svg/soporte-telefono.svg';
 import coberturaIcon from '../assets/svg/cobertura.svg';
 
 const benefits = [
@@ -15,11 +14,6 @@ const benefits = [
     icon: seguridadIcon,
     title: 'Seguridad garantizada',
     text: 'Balones certificados con normas peruanas.'
-  },
-  {
-    icon: soporteIcon,
-    title: 'Soporte 24/7',
-    text: 'Atención inmediata todos los días.'
   },
   {
     icon: coberturaIcon,
