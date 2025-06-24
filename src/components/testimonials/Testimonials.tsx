@@ -1,6 +1,7 @@
+import { useRef, useEffect } from "react";
+import type { FC } from "react";
 import { Marquee } from "../magicui/marquee";
 import "../../styles/testimonials/ReviewCardApple.css";
-import { useRef, useEffect } from "react";
 
 interface Review {
   name: string;
@@ -9,7 +10,7 @@ interface Review {
   img: string;
 }
 
-const reviews: Review[] = [
+const reviews: ReadonlyArray<Review> = [
   {
     name: "Carlos Pérez",
     username: "@carlosp",
@@ -48,20 +49,23 @@ const reviews: Review[] = [
   },
 ];
 
-const firstRow: Review[] = reviews.slice(0, reviews.length / 2);
-const secondRow: Review[] = reviews.slice(reviews.length / 2);
+const firstRow: ReadonlyArray<Review> = reviews.slice(0, reviews.length / 2);
+const secondRow: ReadonlyArray<Review> = reviews.slice(reviews.length / 2);
 
 interface ReviewCardProps extends Review {}
 
-const ReviewCard = ({ img, name, username, body }: ReviewCardProps) => {
+/**
+ * Tarjeta individual de testimonio.
+ */
+const ReviewCard: FC<ReviewCardProps> = ({ img, name, username, body }) => {
   return (
     <figure className="review-card-apple">
       <div className="review-header">
         <img
           className="review-avatar"
-          width="44"
-          height="44"
-          alt=""
+          width={44}
+          height={44}
+          alt={name}
           src={img}
         />
         <div>
@@ -74,12 +78,15 @@ const ReviewCard = ({ img, name, username, body }: ReviewCardProps) => {
   );
 };
 
-const Testimonials: React.FC = () => {
-  const subtitleRef = useRef<HTMLHeadingElement>(null);
-  const sectionRef = useRef<HTMLElement>(null);
+/**
+ * Sección de testimonios con animación de Marquee.
+ */
+const Testimonials: FC = () => {
+  const subtitleRef = useRef<HTMLHeadingElement | null>(null);
+  const sectionRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
-    const handleScroll = () => {
+    const handleScroll = (): void => {
       if (!sectionRef.current) return;
       const rect = sectionRef.current.getBoundingClientRect();
       if (rect.top < window.innerHeight - 60) {
@@ -92,7 +99,7 @@ const Testimonials: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    const handleScroll = () => {
+    const handleScroll = (): void => {
       if (!subtitleRef.current) return;
       const rect = subtitleRef.current.getBoundingClientRect();
       if (rect.top < window.innerHeight - 60) {

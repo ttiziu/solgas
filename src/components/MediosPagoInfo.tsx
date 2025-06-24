@@ -1,10 +1,14 @@
+import type { FC } from 'react';
 import tarjetaCredito from '../assets/svg/tarjeta-de-credito.svg';
 
 interface MediosPagoInfoProps {
   className?: string;
 }
 
-const MediosPagoInfo: React.FC<MediosPagoInfoProps> = ({ className }) => {
+/**
+ * Muestra información sobre los medios de pago aceptados.
+ */
+const MediosPagoInfo: FC<MediosPagoInfoProps> = ({ className }) => {
   return (
     <div className={`medios-pago-info-card${className ? ' ' + className : ''}`}>
       <div className="icono-tarjeta-credito-bg">

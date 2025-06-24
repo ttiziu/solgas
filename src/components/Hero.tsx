@@ -1,7 +1,11 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
+import type { FC } from 'react';
 import '../styles/Hero.css';
 
-const Hero: React.FC = () => {
+/**
+ * Sección principal (Hero) con video de fondo y CTA a WhatsApp.
+ */
+const Hero: FC = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const whatsappUrl =
     'https://wa.me/51994733630?text=quiero%20un%20gas%20porfavor';
@@ -28,7 +32,7 @@ const Hero: React.FC = () => {
         <p className="hero__subtitle">Entrega rápida, segura y al mejor precio en todo el país.</p>
         <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" style={{position: 'relative', display: 'inline-block'}}>
           <span className="hero__cta__rainbow"></span>
-          <button className="hero__cta">Pedir ahora</button>
+          <button className="hero__cta" type="button">Pedir ahora</button>
         </a>
       </div>
     </section>

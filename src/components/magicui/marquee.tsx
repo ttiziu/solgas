@@ -1,16 +1,19 @@
+import type { FC, ReactNode, ComponentPropsWithoutRef } from "react";
 import { cn } from "../../lib/utils";
-import type { ComponentPropsWithoutRef } from "react";
 
 interface MarqueeProps extends ComponentPropsWithoutRef<"div"> {
   className?: string;
   reverse?: boolean;
   pauseOnHover?: boolean;
-  children: React.ReactNode;
+  children: ReactNode;
   vertical?: boolean;
   repeat?: number;
 }
 
-export function Marquee({
+/**
+ * Componente Marquee animado, permite scroll horizontal o vertical de elementos hijos.
+ */
+export const Marquee: FC<MarqueeProps> = ({
   className,
   reverse = false,
   pauseOnHover = false,
@@ -18,7 +21,7 @@ export function Marquee({
   vertical = false,
   repeat = 4,
   ...props
-}: MarqueeProps) {
+}) => {
   const directionClass = vertical ? "flex-col" : "flex-row";
   return (
     <div
@@ -53,4 +56,4 @@ export function Marquee({
         })}
     </div>
   );
-}
+};

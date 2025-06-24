@@ -11,7 +11,7 @@ interface Card {
   alt: string;
 }
 
-const cards: Card[] = [
+const cards: ReadonlyArray<Card> = [
   {
     Icon: IconoPersonalAtencion,
     title: 'Personal de ateción capacitado y especializado.',
@@ -32,6 +32,9 @@ const cards: Card[] = [
   },
 ];
 
+/**
+ * Sección que muestra los motivos para elegir Solgas.
+ */
 const WhySolgas: FC = () => {
   return (
     <section className="why-solgas-section">

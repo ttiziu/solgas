@@ -1,4 +1,4 @@
-import React from "react";
+import type { FC } from "react";
 import "../styles/Footer.css";
 import logoFooter from "../assets/svg/logo-footer.svg";
 import facebookIcon from "../assets/svg/facebook.svg";
@@ -19,7 +19,7 @@ interface SocialLink {
   url: string;
 }
 
-const footerLinks: FooterLink[] = [
+const footerLinks: ReadonlyArray<FooterLink> = [
   {
     title: "Producto",
     links: ["Comprar", "Seguridad", "Solicitar para empresa"],
@@ -34,7 +34,7 @@ const footerLinks: FooterLink[] = [
   },
 ];
 
-const socialLinks: SocialLink[] = [
+const socialLinks: ReadonlyArray<SocialLink> = [
   { icon: facebookIcon, label: "Facebook", url: "https://www.facebook.com/profile.php?id=61574092783362" },
   { icon: instagramIcon, label: "Instagram", url: "https://www.instagram.com/distribuidorsolgasperu/" },
   { icon: twitterIcon, label: "Twitter", url: "#" },
@@ -43,7 +43,7 @@ const socialLinks: SocialLink[] = [
   { icon: whatsappIcon, label: "WhatsApp", url: "https://wa.me/51994733630?text=quiero%20un%20gas%20porfavor" },
 ];
 
-const Footer: React.FC = () => {
+const Footer: FC = () => {
   return (
     <footer className="footer-apple">
       <div className="footer-content">
@@ -51,10 +51,10 @@ const Footer: React.FC = () => {
           <img src={logoFooter} alt="Solgas logo" className="footer-logo" />
         </div>
         <div className="footer-links-row">
-          {footerLinks.map((col) => (
+          {footerLinks.map((col: FooterLink) => (
             <div className="footer-col" key={col.title}>
               <div className="footer-col-title">{col.title}</div>
-              {col.links.map((link) => (
+              {col.links.map((link: string) => (
                 <a className="footer-link" key={link} href="#">
                   {link}
                 </a>
@@ -64,7 +64,7 @@ const Footer: React.FC = () => {
           <div className="footer-col">
             <div className="footer-col-title">Redes</div>
             <div className="footer-socials">
-              {socialLinks.map((social) => (
+              {socialLinks.map((social: SocialLink) => (
                 <a
                   href={social.url}
                   key={social.label}

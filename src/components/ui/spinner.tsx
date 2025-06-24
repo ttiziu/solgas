@@ -1,16 +1,20 @@
+import type { FC, ComponentProps } from "react";
 import { cn } from "../../utils/cn";
 
-type SpinnerProps = {
+interface SpinnerProps extends ComponentProps<"div"> {
   size?: string;
-  color?: string; // Nuevo prop para color
-} & React.ComponentProps<"div">;
+  color?: string;
+}
 
-export function Spinner({
+/**
+ * Spinner animado personalizable por tamaño y color.
+ */
+export const Spinner: FC<SpinnerProps> = ({
   size = "size-6",
-  color = "#222", // Color oscuro por defecto
+  color = "#222",
   className,
   ...props
-}: SpinnerProps) {
+}) => {
   const bars = Array(12).fill(0);
 
   return (
@@ -27,7 +31,7 @@ export function Spinner({
             style={{
               animationDelay: `-${1.3 - i * 0.1}s`,
               transform: `rotate(${30 * i}deg) translate(146%)`,
-              background: color, // Aplica el color
+              background: color,
             }}
             {...props}
           />
@@ -35,4 +39,4 @@ export function Spinner({
       </div>
     </div>
   );
-}
+};

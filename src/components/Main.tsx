@@ -1,11 +1,14 @@
-import React from 'react';
+import type { FC } from 'react';
 import Hero from './Hero';
 import Brands from './Brands';
 import BenefitsCarousel from './BenefitsCarousel';
 import Testimonials from './testimonials/Testimonials';
 import FAQ from './FAQ';
 
-const Main: React.FC = () => {
+/**
+ * Componente principal que agrupa las secciones principales de la página.
+ */
+const Main: FC = () => {
   return (
     <main>
       <Hero />
