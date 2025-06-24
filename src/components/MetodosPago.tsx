@@ -6,19 +6,12 @@ import bbva from '../assets/images/bbva-icono-logo.webp';
 import '../styles/MetodosPago.css';
 import MediosPagoInfo from './MediosPagoInfo';
 
-type MetodoPago = {
+interface MetodoPago {
   icon: string;
   nombre: string;
   alt: string;
   cuenta: string | { cuenta: string; cci: string };
-};
-
-const metodos: MetodoPago[] = [
-  { icon: bcp, nombre: 'Inversiones GDH', alt: 'BCP', cuenta: { cuenta: '194-9920324-0-91', cci: '002-19400992032409198' } },
-  { icon: bbva, nombre: 'Hugo Visalot', alt: 'BBVA', cuenta: { cuenta: '0011-0123-4567890123', cci: '002-01100123456789012319' } },
-  { icon: yape, nombre: 'Inversiones GDH', alt: 'Yape', cuenta: 'Cel: 994 733 630' },
-  { icon: plin, nombre: 'Hugo Visalot', alt: 'Plin', cuenta: 'Cel: 953 520 432' },
-];
+}
 
 function CopyIcon({ copied }: { copied: boolean }) {
   return (
@@ -30,12 +23,19 @@ function CopyIcon({ copied }: { copied: boolean }) {
   );
 }
 
-export default function MetodosPago() {
-  const [copiedIdx, setCopiedIdx] = useState<number | null>(null);
+const metodos: MetodoPago[] = [
+  { icon: bcp, nombre: 'Inversiones GDH', alt: 'BCP', cuenta: { cuenta: ' 194-9920324-0-91', cci: ' 002-19400992032409198' } },
+  { icon: bbva, nombre: 'Hugo Visalot', alt: 'BBVA', cuenta: { cuenta: ' 0011-0123-4567890123', cci: ' 002-01100123456789012319' } },
+  { icon: yape, nombre: 'Inversiones GDH', alt: 'Yape', cuenta: ' 994 733 630' },
+  { icon: plin, nombre: 'Hugo Visalot', alt: 'Plin', cuenta: ' 953 520 432' },
+];
 
-  const handleCopy = (cuenta: string, idx: number) => {
-    navigator.clipboard.writeText(cuenta.replace(/.*?:\s*/, ''));
-    setCopiedIdx(idx);
+export default function MetodosPago() {
+  const [copiedIdx, setCopiedIdx] = useState<string | null>(null);
+
+  const handleCopy = (text: string, key: string) => {
+    navigator.clipboard.writeText(text);
+    setCopiedIdx(key);
     setTimeout(() => setCopiedIdx(null), 1200);
   };
 
@@ -45,78 +45,60 @@ export default function MetodosPago() {
       <div className="metodos-pago-grid">
         {metodos.map((m, idx) => (
           <div
-            className={
-              'metodo-pago-minimal-card' +
-              (m.alt === 'BCP' ? ' bcp' : '') +
-              (m.alt === 'BBVA' ? ' bbva' : '') +
-              (m.alt === 'Yape' ? ' yape' : '') +
-              (m.alt === 'Plin' ? ' plin' : '')
-            }
+            className="metodo-pago-minimal-card"
             key={idx}
           >
             <div className="metodo-pago-minimal-icon-wrapper">
               <img
                 src={m.icon}
                 alt={m.alt}
-                className={
-                  'metodo-pago-minimal-icon' +
-                  (m.alt === 'BCP' || m.alt === 'BBVA' ? ' banco' : '')
-                }
+                className="metodo-pago-minimal-icon"
               />
             </div>
             <div className="metodo-pago-minimal-info">
-              <span className="metodo-pago-minimal-nombre">{m.nombre}</span>
-              <span className="metodo-pago-minimal-cuenta">
-                {m.cuenta && (
-                  <>
-                    {(m.alt === 'BCP' || m.alt === 'BBVA') && typeof m.cuenta !== 'string' ? (
-                      <div className="bcp-cuentas-flex">
-                        <div className="bcp-cuenta-item">
-                          <span className="bcp-label">Cuenta:</span>
-                          <span className="bcp-num">{m.cuenta.cuenta}</span>
-                          <button
-                            className="copy-btn"
-                            aria-label={`Copiar cuenta ${m.alt}`}
-                            onClick={() => typeof m.cuenta !== 'string' ? handleCopy(m.cuenta.cuenta, idx) : undefined}
-                            tabIndex={0}
-                          >
-                            <CopyIcon copied={copiedIdx === idx} />
-                          </button>
-                        </div>
-                        <div className="bcp-cuenta-item">
-                          <span className="bcp-label">CCI:</span>
-                          <span className="bcp-num">{m.cuenta.cci}</span>
-                          <button
-                            className="copy-btn"
-                            aria-label={`Copiar CCI ${m.alt}`}
-                            onClick={() => typeof m.cuenta !== 'string' ? handleCopy(m.cuenta.cci, idx + 100) : undefined}
-                            tabIndex={0}
-                          >
-                            <CopyIcon copied={copiedIdx === idx + 100} />
-                          </button>
-                        </div>
-                      </div>
-                    ) : (
-                      <div className="bcp-cuentas-flex">
-                        <div className="bcp-cuenta-item">
-                          <span className="bcp-label">Cel:</span>
-                          <span className="bcp-num">{typeof m.cuenta === 'string' ? m.cuenta.replace('Cel: ', '') : ''}</span>
-                          {typeof m.cuenta === 'string' && (
-                            <button
-                              className="copy-btn"
-                              aria-label="Copiar celular"
-                              onClick={() => typeof m.cuenta === 'string' ? handleCopy(m.cuenta.replace(/.*?:\s*/, ''), idx) : undefined}
-                              tabIndex={0}
-                            >
-                              <CopyIcon copied={copiedIdx === idx} />
-                            </button>
-                          )}
-                        </div>
-                      </div>
-                    )}
-                  </>
-                )}
-              </span>
+              <div className="metodo-pago-minimal-nombre" style={{ fontWeight: 600, textAlign: 'center', marginBottom: 8 }}>{m.nombre}</div>
+              {/* Datos de cuenta o celular */}
+              {typeof m.cuenta === 'string' ? (
+                <div className="metodo-pago-minimal-cuenta-row">
+                  <span className="metodo-pago-label"><b>Cel:</b></span>
+                  <span className="metodo-pago-value">{m.cuenta}</span>
+                  <button
+                    className="copy-btn"
+                    onClick={() => handleCopy(m.cuenta as string, `${idx}-cel`)}
+                    type="button"
+                    aria-label="Copiar celular"
+                  >
+                    <CopyIcon copied={copiedIdx === `${idx}-cel`} />
+                  </button>
+                </div>
+              ) : (
+                <>
+                  <div className="metodo-pago-minimal-cuenta-row">
+                    <span className="metodo-pago-label"><b>Cuenta:</b></span>
+                    <span className="metodo-pago-value">{(m.cuenta as { cuenta: string; cci: string }).cuenta}</span>
+                    <button
+                      className="copy-btn"
+                      onClick={() => handleCopy((m.cuenta as { cuenta: string; cci: string }).cuenta, `${idx}-cuenta`)}
+                      type="button"
+                      aria-label="Copiar cuenta"
+                    >
+                      <CopyIcon copied={copiedIdx === `${idx}-cuenta`} />
+                    </button>
+                  </div>
+                  <div className="metodo-pago-minimal-cuenta-row">
+                    <span className="metodo-pago-label"><b>CCI:</b></span>
+                    <span className="metodo-pago-value">{(m.cuenta as { cuenta: string; cci: string }).cci}</span>
+                    <button
+                      className="copy-btn"
+                      onClick={() => handleCopy((m.cuenta as { cuenta: string; cci: string }).cci, `${idx}-cci`)}
+                      type="button"
+                      aria-label="Copiar CCI"
+                    >
+                      <CopyIcon copied={copiedIdx === `${idx}-cci`} />
+                    </button>
+                  </div>
+                </>
+              )}
             </div>
           </div>
         ))}

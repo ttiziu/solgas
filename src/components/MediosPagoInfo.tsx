@@ -4,7 +4,7 @@ interface MediosPagoInfoProps {
   className?: string;
 }
 
-export default function MediosPagoInfo({ className }: MediosPagoInfoProps) {
+const MediosPagoInfo: React.FC<MediosPagoInfoProps> = ({ className }) => {
   return (
     <div className={`medios-pago-info-card${className ? ' ' + className : ''}`}>
       <div className="icono-tarjeta-credito-bg">
@@ -13,4 +13,6 @@ export default function MediosPagoInfo({ className }: MediosPagoInfoProps) {
       <span className="medios-pago-texto">Aceptamos todos los medios de pago y todas las tarjetas</span>
     </div>
   );
-}
+};
+
+export default MediosPagoInfo;

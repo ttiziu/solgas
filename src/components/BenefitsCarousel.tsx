@@ -4,7 +4,13 @@ import entregaRapidaIcon from '../assets/svg/entrega-rapida.svg';
 import seguridadIcon from '../assets/svg/seguridad.svg';
 import coberturaIcon from '../assets/svg/cobertura.svg';
 
-const benefits = [
+interface Benefit {
+  icon: string;
+  title: string;
+  text: string;
+}
+
+const benefits: Benefit[] = [
   {
     icon: entregaRapidaIcon,
     title: 'Entrega rápida',

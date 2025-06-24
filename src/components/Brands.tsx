@@ -11,7 +11,13 @@ import LimagasImg from '../assets/images/Limagas.webp';
 import PrimaxImg from '../assets/images/primax.png';
 import GithubgImg from '../assets/images/GitHub-Logo.png';
 import VercelImg from '../assets/images/Vercel-Logo.png';
-const brands = [
+
+interface Brand {
+  name: string;
+  src: string;
+}
+
+const brands: Brand[] = [
   { name: 'Caseritogas', src: CaseritogasImg },
   { name: 'Econogas', src: EconogasImg },
   { name: 'Zetagas', src: ZetagasImg },

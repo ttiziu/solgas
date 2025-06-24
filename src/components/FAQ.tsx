@@ -1,7 +1,12 @@
 import React, { useState, useRef, useEffect } from "react";
 import "../styles/FAQ.css";
 
-const faqs = [
+interface Faq {
+  question: string;
+  answer: string;
+}
+
+const faqs: Faq[] = [
   {
     question: "¿Cuánto tiempo tarda en llegar un balón después del pedido?",
     answer: "La entrega se realiza en menos de 24 horas, dependiendo de tu ubicación."
@@ -27,7 +32,7 @@ const faqs = [
 const FAQ: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const sectionRef = useRef<HTMLElement>(null);
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState<boolean>(false);
 
   const toggleFAQ = (idx: number) => {
     setOpenIndex(openIndex === idx ? null : idx);

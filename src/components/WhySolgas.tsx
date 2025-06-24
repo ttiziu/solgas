@@ -1,9 +1,17 @@
+import type { FC } from 'react';
 import SeguroConfiable from '../assets/svg/segurocongfiable.svg?react';
 import IconoPersonalAtencion from '../assets/svg/iconopersonalatencion.svg?react';
 import IconoBalonSolgas from '../assets/svg/iconobalonsolgas.svg?react';
 import '../styles/WhySolgas.css';
 
-const cards = [
+interface Card {
+  Icon: FC<{ className?: string; 'aria-label': string }>;
+  title: string;
+  number: string;
+  alt: string;
+}
+
+const cards: Card[] = [
   {
     Icon: IconoPersonalAtencion,
     title: 'Personal de ateción capacitado y especializado.',
@@ -24,10 +32,12 @@ const cards = [
   },
 ];
 
-export default function WhySolgas() {
+const WhySolgas: FC = () => {
   return (
     <section className="why-solgas-section">
-      <h2 className="why-solgas-title">¿Por qué Solgas?</h2>
+      <h2 className="why-solgas-title">
+        ¿Por qué Solgas?
+      </h2>
       <div className="why-solgas-cards">
         {cards.map((card, idx) => {
           const Icon = card.Icon;
@@ -44,4 +54,6 @@ export default function WhySolgas() {
       </div>
     </section>
   );
-}
+};
+
+export default WhySolgas;
