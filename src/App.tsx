@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import type { FC } from 'react';
 import Header from './components/Header';
 import Main from './components/Main';
 import Footer from './components/Footer';
@@ -10,11 +11,11 @@ import { Spinner } from './components/ui/spinner';
 import './styles/globals.css';
 import { useState, useEffect } from 'react';
 
-function AppRoutes() {
+const AppRoutes: FC = () => {
   const location = useLocation();
-  const [loading, setLoading] = useState(false);
-  const [blur, setBlur] = useState(false);
-  const [hideSpinner, setHideSpinner] = useState(false);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [blur, setBlur] = useState<boolean>(false);
+  const [hideSpinner, setHideSpinner] = useState<boolean>(false);
 
   useEffect(() => {
     setLoading(true);
@@ -47,9 +48,9 @@ function AppRoutes() {
       )}
     </>
   );
-}
+};
 
-function App() {
+const App: FC = () => {
   return (
     <Router>
       <Header />
@@ -57,6 +58,6 @@ function App() {
       <Footer />
     </Router>
   );
-}
+};
 
 export default App;

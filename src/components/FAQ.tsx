@@ -1,4 +1,5 @@
-import React, { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
+import type { FC } from "react";
 import "../styles/FAQ.css";
 
 interface Faq {
@@ -6,7 +7,7 @@ interface Faq {
   answer: string;
 }
 
-const faqs: Faq[] = [
+const faqs: ReadonlyArray<Faq> = [
   {
     question: "¿Cuánto tiempo tarda en llegar un balón después del pedido?",
     answer: "La entrega se realiza en menos de 24 horas, dependiendo de tu ubicación."
@@ -29,17 +30,17 @@ const faqs: Faq[] = [
   }
 ];
 
-const FAQ: React.FC = () => {
+const FAQ: FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const sectionRef = useRef<HTMLElement>(null);
   const [visible, setVisible] = useState<boolean>(false);
 
-  const toggleFAQ = (idx: number) => {
+  const toggleFAQ = (idx: number): void => {
     setOpenIndex(openIndex === idx ? null : idx);
   };
 
   useEffect(() => {
-    const handleScroll = () => {
+    const handleScroll = (): void => {
       if (!sectionRef.current) return;
       const rect = sectionRef.current.getBoundingClientRect();
       if (rect.top < window.innerHeight - 60) {
@@ -55,11 +56,11 @@ const FAQ: React.FC = () => {
     <section ref={sectionRef} className={`faq-section${visible ? " visible" : ""}`}>
       <h2 className="faq-title">Preguntas Frecuentes - FAQ</h2>
       <div className="faq-list">
-        {faqs.map((faq, idx) => (
+        {faqs.map((faq: Faq, idx: number) => (
           <div
             className={`faq-item${openIndex === idx ? " open" : ""}`}
             key={idx}
-            onClick={() => toggleFAQ(idx)}
+            onClick={(): void => toggleFAQ(idx)}
           >
             <div className="faq-question">
               {faq.question}

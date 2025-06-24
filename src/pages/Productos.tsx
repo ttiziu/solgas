@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
+import type { FC } from 'react';
 import gsap from 'gsap';
 import solgas10kg from '../assets/images/solgas10kg.webp';
 import solgas45kg from '../assets/images/solgas45kg.webp';
@@ -29,7 +30,7 @@ interface Distrito {
   img: string;
 }
 
-const productos: Producto[] = [
+const productos: ReadonlyArray<Producto> = [
   {
     nombre: 'Balón de 10kg',
     img: solgas10kg,
@@ -50,7 +51,7 @@ const productos: Producto[] = [
   },
 ];
 
-const distritos: Distrito[] = [
+const distritos: ReadonlyArray<Distrito> = [
   { nombre: 'Surquillo', img: surquilloImg },
   { nombre: 'Surco', img: surcoImg },
   { nombre: 'San Borja', img: sanborjaImg },
@@ -64,7 +65,7 @@ const distritos: Distrito[] = [
   { nombre: 'Lince', img: linceImg },
 ];
 
-const Productos: React.FC = () => {
+const Productos: FC = () => {
   useEffect(() => {
     gsap.fromTo(
       '.cobertura-card',
@@ -86,7 +87,7 @@ const Productos: React.FC = () => {
       <section className="productos-section">
         <h1 className="productos-title">Productos hogar</h1>
         <div className="productos-grid">
-          {productos.map((p) => (
+          {productos.map((p: Producto) => (
             <div key={p.nombre} className="producto-card">
               <img src={p.img} alt={p.nombre} className="producto-img" />
               <div className="producto-nombre">{p.nombre}</div>
@@ -105,7 +106,7 @@ const Productos: React.FC = () => {
         <section className="cobertura-section">
           <h2 className="cobertura-title">Conoce nuestra cobertura</h2>
           <div className="cobertura-grid">
-            {distritos.map((d) => (
+            {distritos.map((d: Distrito) => (
               <div className="cobertura-card" key={d.nombre}>
                 <div className="cobertura-img-wrap">
                   <img src={d.img} alt={d.nombre} className="cobertura-img" />

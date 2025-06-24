@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import type { FC } from 'react';
 import yape from '../assets/svg/yape.svg';
 import plin from '../assets/svg/plin.svg';
 import bcp from '../assets/images/bcp-icono-logo.webp';
@@ -6,22 +7,33 @@ import bbva from '../assets/images/bbva-icono-logo.webp';
 import '../styles/MetodosPago.css';
 import MediosPagoInfo from './MediosPagoInfo';
 
+// Tipos explícitos para cuentas bancarias y métodos de pago
+interface CuentaBancaria {
+  cuenta: string;
+  cci: string;
+}
+
+type MetodoPagoCuenta = string | CuentaBancaria;
+
 interface MetodoPago {
   icon: string;
   nombre: string;
   alt: string;
-  cuenta: string | { cuenta: string; cci: string };
+  cuenta: MetodoPagoCuenta;
 }
 
-function CopyIcon({ copied }: { copied: boolean }) {
-  return (
-    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" className="copy-icon">
-      <rect x="6" y="6" width="10" height="10" rx="2" stroke={copied ? '#4caf50' : '#aab2c8'} strokeWidth="2" fill={copied ? '#e8f5e9' : 'none'} />
-      <rect x="3" y="3" width="10" height="10" rx="2" stroke={copied ? '#4caf50' : '#cfd8dc'} strokeWidth="2" fill="none" />
-      {copied && <path d="M9 12l2 2 4-4" stroke="#4caf50" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />}
-    </svg>
-  );
+// Props para el icono de copiar
+interface CopyIconProps {
+  copied: boolean;
 }
+
+const CopyIcon: FC<CopyIconProps> = ({ copied }) => (
+  <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" className="copy-icon">
+    <rect x="6" y="6" width="10" height="10" rx="2" stroke={copied ? '#4caf50' : '#aab2c8'} strokeWidth="2" fill={copied ? '#e8f5e9' : 'none'} />
+    <rect x="3" y="3" width="10" height="10" rx="2" stroke={copied ? '#4caf50' : '#cfd8dc'} strokeWidth="2" fill="none" />
+    {copied && <path d="M9 12l2 2 4-4" stroke="#4caf50" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />}
+  </svg>
+);
 
 const metodos: MetodoPago[] = [
   { icon: bcp, nombre: 'Inversiones GDH', alt: 'BCP', cuenta: { cuenta: ' 194-9920324-0-91', cci: ' 002-19400992032409198' } },
@@ -30,10 +42,14 @@ const metodos: MetodoPago[] = [
   { icon: plin, nombre: 'Hugo Visalot', alt: 'Plin', cuenta: ' 953 520 432' },
 ];
 
-export default function MetodosPago() {
-  const [copiedIdx, setCopiedIdx] = useState<string | null>(null);
+// Tipo para el estado copiedIdx
+// Puede ser null o un string con el formato `${idx}-cel|cuenta|cci`
+type CopiedIdx = string | null;
 
-  const handleCopy = (text: string, key: string) => {
+const MetodosPago: FC = () => {
+  const [copiedIdx, setCopiedIdx] = useState<CopiedIdx>(null);
+
+  const handleCopy = (text: string, key: string): void => {
     navigator.clipboard.writeText(text);
     setCopiedIdx(key);
     setTimeout(() => setCopiedIdx(null), 1200);
@@ -43,7 +59,7 @@ export default function MetodosPago() {
     <section className="metodos-pago-section">
       <h2 className="metodos-pago-title">Métodos de Pago</h2>
       <div className="metodos-pago-grid">
-        {metodos.map((m, idx) => (
+        {metodos.map((m: MetodoPago, idx: number) => (
           <div
             className="metodo-pago-minimal-card"
             key={idx}
@@ -75,10 +91,10 @@ export default function MetodosPago() {
                 <>
                   <div className="metodo-pago-minimal-cuenta-row">
                     <span className="metodo-pago-label"><b>Cuenta:</b></span>
-                    <span className="metodo-pago-value">{(m.cuenta as { cuenta: string; cci: string }).cuenta}</span>
+                    <span className="metodo-pago-value">{(m.cuenta as CuentaBancaria).cuenta}</span>
                     <button
                       className="copy-btn"
-                      onClick={() => handleCopy((m.cuenta as { cuenta: string; cci: string }).cuenta, `${idx}-cuenta`)}
+                      onClick={() => handleCopy((m.cuenta as CuentaBancaria).cuenta, `${idx}-cuenta`)}
                       type="button"
                       aria-label="Copiar cuenta"
                     >
@@ -87,10 +103,10 @@ export default function MetodosPago() {
                   </div>
                   <div className="metodo-pago-minimal-cuenta-row">
                     <span className="metodo-pago-label"><b>CCI:</b></span>
-                    <span className="metodo-pago-value">{(m.cuenta as { cuenta: string; cci: string }).cci}</span>
+                    <span className="metodo-pago-value">{(m.cuenta as CuentaBancaria).cci}</span>
                     <button
                       className="copy-btn"
-                      onClick={() => handleCopy((m.cuenta as { cuenta: string; cci: string }).cci, `${idx}-cci`)}
+                      onClick={() => handleCopy((m.cuenta as CuentaBancaria).cci, `${idx}-cci`)}
                       type="button"
                       aria-label="Copiar CCI"
                     >
@@ -106,4 +122,6 @@ export default function MetodosPago() {
       <MediosPagoInfo className="medios-pago-info-separado" />
     </section>
   );
-}
+};
+
+export default MetodosPago;
