@@ -98,6 +98,10 @@
   line-height: 1.6;
 }
 
+.font-inter {
+  font-family: 'Inter', Arial, sans-serif;
+}
+
 @media (max-width: 900px) {
   .benefits-section {
     padding: 24px 0 60px 0;

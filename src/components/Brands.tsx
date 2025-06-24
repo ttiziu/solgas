@@ -1,4 +1,4 @@
-import React from 'react';
+import type { FC } from 'react';
 import '../styles/Brands.css';
 import CaseritogasImg from '../assets/images/Casertitogas.png';
 import EconogasImg from '../assets/images/Econogas.png';
@@ -17,7 +17,7 @@ interface Brand {
   src: string;
 }
 
-const brands: Brand[] = [
+const brands: ReadonlyArray<Brand> = [
   { name: 'Caseritogas', src: CaseritogasImg },
   { name: 'Econogas', src: EconogasImg },
   { name: 'Zetagas', src: ZetagasImg },
@@ -31,13 +31,13 @@ const brands: Brand[] = [
   { name: 'Vercel', src: VercelImg },
 ];
 
-const Brands: React.FC = () => (
+const Brands: FC = () => (
   <section className="brands-section">
     <div className="brands-title">Nuestras Marcas Aliadas</div>
     <div className="brands-fade-left" />
     <div className="brands-fade-right" />
     <div className="brands-list brands-scroll">
-      {[...brands, ...brands].map((brand, idx) => (
+      {[...brands, ...brands].map((brand: Brand, idx: number) => (
         <div className="brand-item" key={idx}>
           <img src={brand.src} alt={brand.name} />
         </div>
