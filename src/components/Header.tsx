@@ -41,7 +41,9 @@ const Header: FC = () => {
   return (
     <header className="header">
       <div className="header__left">
-        <img src={logo} alt="Solgas Logo" className="header__logo" />
+        <Link to="/" className="header__logo-link">
+          <img src={logo} alt="Solgas Logo" className="header__logo" />
+        </Link>
         <nav id="primary-navigation" role="navigation" className={`header__nav${menuOpen ? ' header__nav--open' : ''}`}>
           <a href="tel:+51994733630" className="header__nav-link" onClick={handleMenuClose}>
             <span className="header__icon-container"><img src={llamadaIcon} alt="Llamar" className="header__icon" /></span>
