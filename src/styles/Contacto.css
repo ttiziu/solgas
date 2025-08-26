@@ -104,27 +104,30 @@
 .contacto-consulta-btn {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.8rem;
   background: linear-gradient(90deg, #3576b8 0%, #0a1e4d 100%);
   color: #fff;
   font-size: 1.35rem;
   font-weight: 600;
   border: none;
   border-radius: 2.5rem;
-  padding: 1.1rem 2.5rem;
+  padding: 1rem 2rem;
   cursor: pointer;
   box-shadow: 0 2px 8px 0 rgba(34,65,97,0.08);
   transition: background 0.2s, box-shadow 0.2s;
   text-decoration: none;
+  flex-direction: row;
+  justify-content: center;
 }
 .contacto-consulta-btn:hover {
   background: linear-gradient(90deg, #285a8c 0%, #06122a 100%);
   box-shadow: 0 4px 16px 0 rgba(34,65,97,0.13);
 }
 .contacto-consulta-btn-icon {
-  width: 38px;
-  height: 38px;
+  width: 24px;
+  height: 24px;
   display: inline-block;
+  flex-shrink: 0;
 }
 
 .contacto-form-section {
@@ -235,5 +238,57 @@
   .contacto-form-btn {
     font-size: 0.98rem;
     padding: 0.8rem 1.5rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .contacto-consulta-adicional {
+    padding: 2.5rem 0 3rem 0;
+  }
+  .contacto-consulta-title {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  .contacto-consulta-desc {
+    font-size: 1.1rem;
+    margin-bottom: 1.8rem;
+  }
+  .contacto-consulta-btn {
+    font-size: 1.1rem;
+    padding: 1rem 2rem;
+    flex-direction: row;
+    gap: 0.8rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .contacto-consulta-adicional {
+    padding: 2rem 5vw 2.5rem 5vw;
+    margin: 1.5rem 0 0 0;
+    width: 100%;
+    max-width: 100%;
+    left: auto;
+    right: auto;
+    transform: none;
+  }
+  .contacto-consulta-title {
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+  }
+  .contacto-consulta-desc {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .contacto-consulta-btn {
+    font-size: 1rem;
+    padding: 0.9rem 1.5rem;
+    width: 100%;
+    max-width: 280px;
+    flex-direction: row;
+    gap: 0.6rem;
+  }
+  .contacto-consulta-btn span {
+    word-break: break-word;
   }
 }
