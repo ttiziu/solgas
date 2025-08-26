@@ -42,7 +42,11 @@ const Header: FC = () => {
     <header className="header">
       <div className="header__left">
         <img src={logo} alt="Solgas Logo" className="header__logo" />
-        <nav className={`header__nav${menuOpen ? ' header__nav--open' : ''}`}>
+        <nav id="primary-navigation" role="navigation" className={`header__nav${menuOpen ? ' header__nav--open' : ''}`}>
+          <a href="tel:+51994733630" className="header__nav-link" onClick={handleMenuClose}>
+            <span className="header__icon-container"><img src={llamadaIcon} alt="Llamar" className="header__icon" /></span>
+            Llamar
+          </a>
           <Link to="/" className="header__nav-link" onClick={handleMenuClose}>
             <span className="header__icon-container"><img src={inicioIcon} alt="Inicio" className="header__icon" /></span>
             Inicio
@@ -65,7 +69,9 @@ const Header: FC = () => {
         <button
           className={`header__menu-btn${menuOpen ? ' header__menu-btn--open' : ''}`}
           onClick={handleMenuToggle}
-          aria-label="Abrir menú"
+          aria-label={menuOpen ? 'Cerrar menú' : 'Abrir menú'}
+          aria-expanded={menuOpen}
+          aria-controls="primary-navigation"
           type="button"
         >
           <img src={menuIcon} alt="Menú" className="header__menu-icon" />

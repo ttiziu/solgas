@@ -14,12 +14,13 @@
   font-family: 'Inter', Arial, sans-serif;
 }
 .productos-grid {
-  display: flex;
-  gap: 40px;
-  justify-content: center;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(260px, 1fr));
+  gap: 24px;
+  justify-items: center;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 3vw;
 }
 .producto-card {
   background: #fff;
@@ -43,7 +44,8 @@
   border-radius: 16px;
   margin-bottom: 18px;
   box-shadow: 0 2px 12px 0 rgba(0,0,0,0.07);
-  object-fit: cover;
+  object-fit: contain;
+  background: #f8fafc;
 }
 .producto-nombre {
   font-weight: 700;
@@ -159,36 +161,25 @@
     margin-bottom: 18px;
   }
   .productos-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 18px;
-    padding: 0 2vw;
-    justify-items: center;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    padding: 0 4vw;
   }
   .producto-card {
-    background: #fff;
-    border: 2px solid #ff9100;
-    border-radius: 18px;
-    box-shadow: 0 2px 12px 0 rgba(34,65,97,0.10);
-    padding: 10px 1vw 18px 1vw;
-    max-width: 180px;
-    min-width: 0;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 10px;
-    transition: box-shadow 0.2s;
+    border-radius: 16px;
+    padding: 16px;
+    max-width: unset;
+    width: 100%;
+    gap: 8px;
   }
   .producto-card .producto-img {
-    max-width: 90px;
-    width: 90px;
-    height: 90px;
+    max-width: 140px;
+    width: 140px;
+    height: auto;
     border-radius: 12px;
     margin-bottom: 0.5rem;
     box-shadow: 0 1px 6px 0 rgba(34,65,97,0.10);
-    object-fit: cover;
+    object-fit: contain;
     background: #f8fafc;
   }
   .producto-nombre {
@@ -201,18 +192,19 @@
     min-height: unset;
   }
   .producto-btn {
-    width: 100%;
+    width: fit-content;
     background: linear-gradient(90deg, #ff9100 0%, #ef7f1a 100%);
     color: #fff;
     border: none;
     border-radius: 14px;
-    padding: 0.7rem 0;
+    padding: 0.55rem 1rem;
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 0.98rem;
     letter-spacing: 0.5px;
     box-shadow: 0 2px 8px 0 rgba(255,145,0,0.10);
     cursor: pointer;
     margin-top: 0.5rem;
+    align-self: center;
     transition: background 0.2s;
     text-transform: uppercase;
   }
@@ -230,30 +222,32 @@
     margin-bottom: 10px;
   }
   .productos-grid {
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 8px;
-    padding: 0 1vw;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 0 4vw;
   }
   .producto-card {
-    max-width: 120px;
-    padding: 6px 0.5vw 10px 0.5vw;
-    border-radius: 12px;
-    gap: 6px;
+    max-width: 100%;
+    padding: 14px;
+    border-radius: 14px;
+    gap: 8px;
   }
   .producto-card .producto-img {
-    max-width: 60px;
-    width: 60px;
-    height: 60px;
-    border-radius: 8px;
+    max-width: 120px;
+    width: 120px;
+    height: auto;
+    border-radius: 10px;
   }
   .producto-nombre {
-    font-size: 0.92rem;
-    margin-bottom: 0.3rem;
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
   }
   .producto-btn {
-    font-size: 0.92rem;
-    border-radius: 10px;
-    padding: 0.5rem 0;
+    font-size: 0.95rem;
+    border-radius: 12px;
+    padding: 0.5rem 0.9rem;
+    width: fit-content;
+    align-self: center;
   }
   .producto-desc-responsive {
     display: none;

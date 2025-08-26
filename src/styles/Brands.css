@@ -80,3 +80,41 @@
   right: 0;
   background: linear-gradient(270deg, #fff 70%, transparent 100%);
 }
+
+@media (max-width: 900px) {
+  .brands-section {
+    padding: 24px 0 24px 0;
+  }
+  .brands-title {
+    margin-bottom: 28px;
+    font-size: 1.2rem;
+  }
+  .brands-list {
+    gap: 32px;
+    padding: 0 12px;
+    min-width: 0;
+  }
+  .brand-item img {
+    height: 56px;
+  }
+  .brands-fade-left,
+  .brands-fade-right {
+    width: 72px;
+  }
+  .brands-scroll {
+    animation-duration: 35s;
+  }
+}
+
+@media (max-width: 600px) {
+  .brands-list {
+    gap: 24px;
+  }
+  .brand-item img {
+    height: 48px;
+  }
+  .brands-fade-left,
+  .brands-fade-right {
+    width: 48px;
+  }
+}

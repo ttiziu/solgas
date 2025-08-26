@@ -63,6 +63,13 @@
   border-radius: 2rem;
 }
 
+.header__nav-link:focus-visible,
+.header__call-btn:focus-visible,
+.header__menu-btn:focus-visible {
+  outline: 3px solid #ffb366;
+  outline-offset: 2px;
+}
+
 .header__nav-link:hover .header__icon-container,
 .header__nav-link:focus .header__icon-container {
   opacity: 1;
@@ -174,6 +181,16 @@
   width: 32px;
   height: 32px;
   display: block;
+  /* Color anaranjado de la marca via CSS filter */
+  filter: invert(53%) sepia(82%) saturate(1207%) hue-rotate(350deg) brightness(98%) contrast(98%);
+}
+
+/* Overlay oscurecedor cuando el menú lateral está abierto */
+.header__nav-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 150;
 }
 
 @media (max-width: 900px) {
@@ -182,7 +199,8 @@
   }
   .header__logo {
     height: 32px;
-    margin-right: 32px;
+    margin-right: 0;
+    order: 2;
   }
   .header__nav {
     display: flex;
@@ -192,11 +210,11 @@
     height: 100vh;
     width: 80vw;
     max-width: 340px;
-    background: #fff;
+    background: #00254b;
     box-shadow: 0 0 32px 0 rgba(34,65,97,0.13);
     flex-direction: column;
     align-items: flex-start;
-    gap: 0;
+    gap: 8px;
     padding: 80px 32px 32px 32px;
     z-index: 200;
     transform: translateX(-100%);
@@ -210,19 +228,46 @@
     opacity: 1;
     pointer-events: auto;
   }
+  .header__nav-link {
+    color: #EF7F1A;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s, background 0.2s, border-radius 0.2s, padding 0.2s;
+    padding: 12px 28px;
+    border-radius: 2rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: transparent;
+  }
+  .header__nav-link:hover,
+  .header__nav-link:focus {
+    background: rgba(239, 127, 26, 0.15);
+    color: #EF7F1A;
+    border-radius: 2rem;
+  }
   .header__call-link {
-    display: block;
+    display: none; /* se mueve al menú hamburguesa */
   }
   .header__menu-btn {
     display: block;
-    margin-left: 0;
+    margin-left: auto;
     margin-right: 0;
+    order: 2; /* botón hamburguesa a la derecha */
   }
   .header__right {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 0.5rem;
+    width: 100%;
+  }
+  .header__left {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
   }
 }
 
