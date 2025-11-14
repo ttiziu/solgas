@@ -30,7 +30,7 @@ const Hero: FC = () => {
       <div className="hero__content" ref={heroRef}>
         <h1 className="hero__title">¡Gas confiable para tu hogar y empresa!</h1>
         <p className="hero__subtitle">Entrega rápida, segura y al mejor precio en todo el país.</p>
-        <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" style={{position: 'relative', display: 'inline-block'}}>
+        <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="hero__cta-link">
           <span className="hero__cta__rainbow"></span>
           <button className="hero__cta" type="button">Pedir ahora</button>
         </a>

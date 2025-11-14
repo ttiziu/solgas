@@ -40,7 +40,7 @@ const Contacto: React.FC = () => {
   };
 
   return (
-    <div className="servicios-bg" style={{ minHeight: '60vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start', paddingTop: '3rem' }}>
+    <div className="servicios-bg contacto-page-container">
       <h2 className="contacto-title">Pedidos y atención al cliente</h2>
       <section className="contacto-pedidos">
         <div className="contacto-pedidos-card">

@@ -152,8 +152,9 @@
   font-size: 1.08rem;
   color: #1a2340;
   font-weight: 600;
+  text-align: center;
   letter-spacing: 0.2px;
-  margin-bottom: 2px;
+  margin-bottom: 8px;
 }
 .metodo-pago-minimal-cuenta {
   display: flex;

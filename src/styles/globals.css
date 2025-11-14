@@ -94,6 +94,10 @@ body {
   pointer-events: none;
 }
 
+.app-spinner-hidden {
+  display: none;
+}
+
 .app-blur-overlay {
   position: fixed;
   inset: 0;

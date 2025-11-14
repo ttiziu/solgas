@@ -47,7 +47,7 @@ const Footer: FC = () => {
   return (
     <footer className="footer-apple">
       <div className="footer-content">
-        <div className="footer-logo-row" style={{ marginBottom: 32 }}>
+        <div className="footer-logo-row">
           <img src={logoFooter} alt="Solgas logo" className="footer-logo" />
         </div>
         <div className="footer-links-row">

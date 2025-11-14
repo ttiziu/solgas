@@ -6,6 +6,11 @@ body.servicios-bg, .servicios-bg {
   background-attachment: fixed;
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 2rem;
 }
 
 .servicios-bg::before {
@@ -15,14 +20,12 @@ body.servicios-bg, .servicios-bg {
   z-index: 0;
   pointer-events: none;
   opacity: 0.22;
-  /* Efecto arenoso tipo grain con SVG noise navy */
   background:
     url('data:image/svg+xml;utf8,<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><filter id="noise" x="0" y="0"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" seed="2"/></filter><rect width="200" height="200" fill="white"/><rect width="200" height="200" filter="url(%23noise)" fill="rgba(30,40,80,0.18)"/></svg>');
   background-size: 220px 220px;
   background-repeat: repeat;
 }
 
-/* Asegura que el contenido esté sobre el fondo */
 .servicios-bg > * {
   position: relative;
   z-index: 1;

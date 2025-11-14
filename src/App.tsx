@@ -34,7 +34,7 @@ const AppRoutes: FC = () => {
   return (
     <>
       <div className={`app-blur-overlay${blur ? ' app-blur-active' : ''}`}></div>
-      <div className={`app-spinner-overlay${!loading && !blur ? ' app-spinner-overlay-leave' : ''}`} style={{display: hideSpinner ? 'none' : undefined}}>
+      <div className={`app-spinner-overlay${!loading && !blur ? ' app-spinner-overlay-leave' : ''}${hideSpinner ? ' app-spinner-hidden' : ''}`}>
         {loading && <Spinner size="size-8" color="#222" />} {/* Color oscuro visible */}
       </div>
       {!loading && (

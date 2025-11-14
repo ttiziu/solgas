@@ -72,7 +72,7 @@ const MetodosPago: FC = () => {
               />
             </div>
             <div className="metodo-pago-minimal-info">
-              <div className="metodo-pago-minimal-nombre" style={{ fontWeight: 600, textAlign: 'center', marginBottom: 8 }}>{m.nombre}</div>
+              <div className="metodo-pago-minimal-nombre">{m.nombre}</div>
               {/* Datos de cuenta o celular */}
               {typeof m.cuenta === 'string' ? (
                 <div className="metodo-pago-minimal-cuenta-row">
