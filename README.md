@@ -1,6 +1,6 @@
 # Solgas Landing Page
 
-Landing page moderna y responsiva para Solgas, desarrollada con React, TypeScript, Vite y Tailwind CSS. Inspirada en referencias visuales tipo Apple, con animaciones suaves, diseño limpio y profesional.
+Landing page moderna y responsiva para Solgas, desarrollada con Next.js 15, React 19, TypeScript y Tailwind CSS. Inspirada en referencias visuales tipo Apple, con animaciones suaves, diseño limpio y profesional.
 
 ## 🚀 Demo en producción
 
@@ -17,13 +17,12 @@ Accede a la página en Vercel: [https://solgas-landing-page.vercel.app/](https:/
 
 ## Tecnologías y frameworks principales
 
-- [React](https://react.dev/) (librería principal para UI)
+- [Next.js 15](https://nextjs.org/) (framework React con App Router)
+- [React 19](https://react.dev/) (librería principal para UI)
 - [TypeScript](https://www.typescriptlang.org/) (tipado estático)
-- [Vite](https://vitejs.dev/) (bundler y servidor de desarrollo)
 - [Tailwind CSS](https://tailwindcss.com/) (utilidades CSS para estilos rápidos y responsivos)
 - [PostCSS](https://postcss.org/) (procesador de CSS)
 - [GSAP](https://gsap.com/) (animaciones avanzadas)
-- [React Router](https://reactrouter.com/) (ruteo de páginas)
 - ESLint (linter de código)
 
 ### Extras y recursos
@@ -36,13 +35,28 @@ Accede a la página en Vercel: [https://solgas-landing-page.vercel.app/](https:/
 
 ```
 src/
-  components/      # Componentes reutilizables (Footer, Header, FAQ, etc.)
-  assets/          # Imágenes y SVGs
-  styles/          # Archivos CSS y Tailwind
-  layouts/         # Layouts generales
-  lib/             # Utilidades
-  main.tsx         # Entry point
-public/            # Archivos estáticos (logo, videos)
+  app/            # Páginas y rutas (Next.js App Router)
+  components/     # Componentes reutilizables (Footer, Header, FAQ, etc.)
+  styles/         # Archivos CSS y Tailwind
+  lib/            # Utilidades
+  utils/          # Utilidades adicionales
+public/           # Archivos estáticos (assets, logo, videos)
+```
+
+## Instalación y desarrollo
+
+```bash
+# Instalar dependencias
+npm install
+
+# Ejecutar servidor de desarrollo
+npm run dev
+
+# Construir para producción
+npm run build
+
+# Iniciar servidor de producción
+npm start
 ```
 
 ## Créditos

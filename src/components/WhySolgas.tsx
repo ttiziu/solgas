@@ -1,8 +1,10 @@
+'use client';
+
 import type { FC } from 'react';
-import SeguroConfiable from '../assets/svg/segurocongfiable.svg?react';
-import IconoPersonalAtencion from '../assets/svg/iconopersonalatencion.svg?react';
-import IconoBalonSolgas from '../assets/svg/iconobalonsolgas.svg?react';
-import '../styles/WhySolgas.css';
+import SeguroConfiable from '../assets/svg/segurocongfiable.svg';
+import IconoPersonalAtencion from '../assets/svg/iconopersonalatencion.svg';
+import IconoBalonSolgas from '../assets/svg/iconobalonsolgas.svg';
+import '@/styles/WhySolgas.css';
 
 interface Card {
   Icon: FC<{ className?: string; 'aria-label': string }>;

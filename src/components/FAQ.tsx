@@ -1,6 +1,8 @@
+'use client';
+
 import { useState, useRef, useEffect } from "react";
 import type { FC } from "react";
-import "../styles/FAQ.css";
+import "@/styles/FAQ.css";
 
 interface Faq {
   question: string;

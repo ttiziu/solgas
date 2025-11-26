@@ -1,9 +1,8 @@
+'use client';
+
 import { useEffect, useRef } from 'react';
 import type { FC } from 'react';
-import '../styles/BenefitsCarousel.css';
-import entregaRapidaIcon from '../assets/svg/entrega-rapida.svg';
-import seguridadIcon from '../assets/svg/seguridad.svg';
-import coberturaIcon from '../assets/svg/cobertura.svg';
+import '@/styles/BenefitsCarousel.css';
 
 interface Benefit {
   icon: string;
@@ -13,17 +12,17 @@ interface Benefit {
 
 const benefits: ReadonlyArray<Benefit> = [
   {
-    icon: entregaRapidaIcon,
+    icon: '/assets/svg/entrega-rapida.svg',
     title: 'Entrega rápida',
     text: 'Llega a todo el país en menos de 24h.'
   },
   {
-    icon: seguridadIcon,
+    icon: '/assets/svg/seguridad.svg',
     title: 'Seguridad garantizada',
     text: 'Balones certificados con normas peruanas.'
   },
   {
-    icon: coberturaIcon,
+    icon: '/assets/svg/cobertura.svg',
     title: 'Cobertura nacional',
     text: 'Soluciones para hogares y empresas.'
   }

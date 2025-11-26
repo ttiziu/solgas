@@ -1,16 +1,5 @@
 import type { FC } from 'react';
-import '../styles/Brands.css';
-import CaseritogasImg from '../assets/images/Casertitogas.png';
-import EconogasImg from '../assets/images/Econogas.png';
-import InversionesGDHImg from '../assets/images/InversionesGDH.png';
-import ZetagasImg from '../assets/images/Zetagas.png';
-import PetroperuImg from '../assets/images/petroperu.png';
-import RepsolImg from '../assets/images/repsol.png';
-import LlamagasImg from '../assets/images/llamagas.png';
-import LimagasImg from '../assets/images/Limagas.webp';
-import PrimaxImg from '../assets/images/primax.png';
-import GithubgImg from '../assets/images/GitHub-Logo.png';
-import VercelImg from '../assets/images/Vercel-Logo.png';
+import '@/styles/Brands.css';
 
 interface Brand {
   name: string;
@@ -18,17 +7,17 @@ interface Brand {
 }
 
 const brands: ReadonlyArray<Brand> = [
-  { name: 'Caseritogas', src: CaseritogasImg },
-  { name: 'Econogas', src: EconogasImg },
-  { name: 'Zetagas', src: ZetagasImg },
-  { name: 'Petroperú', src: PetroperuImg },
-  { name: 'Repsol', src: RepsolImg },
-  { name: 'Inversiones GDH', src: InversionesGDHImg },
-  { name: 'Llamagas', src: LlamagasImg },
-  { name: 'Limagas', src: LimagasImg },
-  { name: 'Primax', src: PrimaxImg },
-  { name: 'Github', src: GithubgImg },
-  { name: 'Vercel', src: VercelImg },
+  { name: 'Caseritogas', src: '/assets/images/Casertitogas.png' },
+  { name: 'Econogas', src: '/assets/images/Econogas.png' },
+  { name: 'Zetagas', src: '/assets/images/Zetagas.png' },
+  { name: 'Petroperú', src: '/assets/images/petroperu.png' },
+  { name: 'Repsol', src: '/assets/images/repsol.png' },
+  { name: 'Inversiones GDH', src: '/assets/images/InversionesGDH.png' },
+  { name: 'Llamagas', src: '/assets/images/llamagas.png' },
+  { name: 'Limagas', src: '/assets/images/Limagas.webp' },
+  { name: 'Primax', src: '/assets/images/primax.png' },
+  { name: 'Github', src: '/assets/images/GitHub-Logo.png' },
+  { name: 'Vercel', src: '/assets/images/Vercel-Logo.png' },
 ];
 
 const Brands: FC = () => (

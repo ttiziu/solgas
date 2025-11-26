@@ -1,6 +1,8 @@
+'use client';
+
 import { useEffect, useRef } from 'react';
 import type { FC } from 'react';
-import '../styles/Hero.css';
+import '@/styles/Hero.css';
 
 /**
  * Sección principal (Hero) con video de fondo y CTA a WhatsApp.

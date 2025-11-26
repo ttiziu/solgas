@@ -1,14 +1,11 @@
+'use client';
+
 import { useEffect, useState } from 'react';
 import type { FC } from 'react';
-import { Link } from 'react-router-dom';
-import '../styles/Header.css';
-import logo from '../assets/images/solgas-logo-azul.png';
-import inicioIcon from '../assets/svg/inicio.svg';
-import productosIcon from '../assets/svg/productos.svg';
-import serviciosIcon from '../assets/svg/servicios.svg';
-import contactoIcon from '../assets/svg/contacto.svg';
-import llamadaIcon from '../assets/svg/llamada.svg';
-import menuIcon from '../assets/svg/menu-hamburguesa.svg';
+import Link from 'next/link';
+import '@/styles/Header.css';
+// Logo usando ruta absoluta desde public/
+const logo = '/assets/images/solgas-logo-azul.png';
 
 /**
  * Header de navegación principal de la web Solgas.
@@ -41,24 +38,24 @@ const Header: FC = () => {
   return (
     <header className="header">
       <div className="header__left">
-        <Link to="/" className="header__logo-link">
+        <Link href="/" className="header__logo-link">
           <img src={logo} alt="Solgas Logo" className="header__logo" />
         </Link>
         <nav id="primary-navigation" role="navigation" className={`header__nav${menuOpen ? ' header__nav--open' : ''}`}>
-          <Link to="/" className="header__nav-link" onClick={handleMenuClose}>
-            <span className="header__icon-container"><img src={inicioIcon} alt="Inicio" className="header__icon" /></span>
+          <Link href="/" className="header__nav-link" onClick={handleMenuClose}>
+            <span className="header__icon-container"><img src="/assets/svg/inicio.svg" alt="Inicio" className="header__icon" /></span>
             Inicio
           </Link>
-          <Link to="/productos" className="header__nav-link" onClick={handleMenuClose}>
-            <span className="header__icon-container"><img src={productosIcon} alt="Productos" className="header__icon" /></span>
+          <Link href="/productos" className="header__nav-link" onClick={handleMenuClose}>
+            <span className="header__icon-container"><img src="/assets/svg/productos.svg" alt="Productos" className="header__icon" /></span>
             Productos
           </Link>
-          <Link to="/servicios" className="header__nav-link" onClick={handleMenuClose}>
-            <span className="header__icon-container"><img src={serviciosIcon} alt="Servicios" className="header__icon" /></span>
+          <Link href="/servicios" className="header__nav-link" onClick={handleMenuClose}>
+            <span className="header__icon-container"><img src="/assets/svg/servicios.svg" alt="Servicios" className="header__icon" /></span>
             Servicios
           </Link>
-          <Link to="/contacto" className="header__nav-link" onClick={handleMenuClose}>
-            <span className="header__icon-container"><img src={contactoIcon} alt="Contacto" className="header__icon" /></span>
+          <Link href="/contacto" className="header__nav-link" onClick={handleMenuClose}>
+            <span className="header__icon-container"><img src="/assets/svg/contacto.svg" alt="Contacto" className="header__icon" /></span>
             Contacto
           </Link>
         </nav>
@@ -72,11 +69,11 @@ const Header: FC = () => {
           aria-controls="primary-navigation"
           type="button"
         >
-          <img src={menuIcon} alt="Menú" className="header__menu-icon" />
+          <img src="/assets/svg/menu-hamburguesa.svg" alt="Menú" className="header__menu-icon" />
         </button>
         <a href="tel:+51994733630" className="header__call-link">
           <button className="header__call-btn" type="button">
-            <span className="header__icon-container"><img src={llamadaIcon} alt="Llamar" className="header__icon" /></span>
+            <span className="header__icon-container"><img src="/assets/svg/llamada.svg" alt="Llamar" className="header__icon" /></span>
             Llamar
           </button>
         </a>

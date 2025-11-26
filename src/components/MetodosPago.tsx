@@ -1,10 +1,8 @@
+'use client';
+
 import { useState } from 'react';
 import type { FC } from 'react';
-import yape from '../assets/svg/yape.svg';
-import plin from '../assets/svg/plin.svg';
-import bcp from '../assets/images/bcp-icono-logo.webp';
-import bbva from '../assets/images/bbva-icono-logo.webp';
-import '../styles/MetodosPago.css';
+import '@/styles/MetodosPago.css';
 import MediosPagoInfo from './MediosPagoInfo';
 
 // Tipos explícitos para cuentas bancarias y métodos de pago
@@ -36,10 +34,10 @@ const CopyIcon: FC<CopyIconProps> = ({ copied }) => (
 );
 
 const metodos: MetodoPago[] = [
-  { icon: bcp, nombre: 'Inversiones GDH', alt: 'BCP', cuenta: { cuenta: ' 194-9920324-0-91', cci: ' 002-19400992032409198' } },
-  { icon: bbva, nombre: 'Hugo Visalot', alt: 'BBVA', cuenta: { cuenta: ' 0011-0123-4567890123', cci: ' 002-01100123456789012319' } },
-  { icon: yape, nombre: 'Inversiones GDH', alt: 'Yape', cuenta: ' 994 733 630' },
-  { icon: plin, nombre: 'Hugo Visalot', alt: 'Plin', cuenta: ' 953 520 432' },
+  { icon: '/assets/images/bcp-icono-logo.webp', nombre: 'Inversiones GDH', alt: 'BCP', cuenta: { cuenta: ' 194-9920324-0-91', cci: ' 002-19400992032409198' } },
+  { icon: '/assets/images/bbva-icono-logo.webp', nombre: 'Hugo Visalot', alt: 'BBVA', cuenta: { cuenta: ' 0011-0123-4567890123', cci: ' 002-01100123456789012319' } },
+  { icon: '/assets/svg/yape.svg', nombre: 'Inversiones GDH', alt: 'Yape', cuenta: ' 994 733 630' },
+  { icon: '/assets/svg/plin.svg', nombre: 'Hugo Visalot', alt: 'Plin', cuenta: ' 953 520 432' },
 ];
 
 // Tipo para el estado copiedIdx

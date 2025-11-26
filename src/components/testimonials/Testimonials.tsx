@@ -1,7 +1,9 @@
+'use client';
+
 import { useRef, useEffect } from "react";
 import type { FC } from "react";
 import { Marquee } from "../magicui/marquee";
-import "../../styles/testimonials/ReviewCardApple.css";
+import "@/styles/testimonials/ReviewCardApple.css";
 
 interface Review {
   name: string;

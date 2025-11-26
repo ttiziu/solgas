@@ -1,12 +1,5 @@
 import type { FC } from "react";
-import "../styles/Footer.css";
-import logoFooter from "../assets/svg/logo-footer.svg";
-import facebookIcon from "../assets/svg/facebook.svg";
-import instagramIcon from "../assets/svg/instagram.svg";
-import twitterIcon from "../assets/svg/twitter-alt.svg";
-import youtubeIcon from "../assets/svg/youtube.svg";
-import pinterestIcon from "../assets/svg/pinterest.svg";
-import whatsappIcon from "../assets/svg/whatsapp.svg";
+import "@/styles/Footer.css";
 
 interface FooterLink {
   title: string;
@@ -35,12 +28,12 @@ const footerLinks: ReadonlyArray<FooterLink> = [
 ];
 
 const socialLinks: ReadonlyArray<SocialLink> = [
-  { icon: facebookIcon, label: "Facebook", url: "https://www.facebook.com/profile.php?id=61574092783362" },
-  { icon: instagramIcon, label: "Instagram", url: "https://www.instagram.com/distribuidorsolgasperu/" },
-  { icon: twitterIcon, label: "Twitter", url: "#" },
-  { icon: youtubeIcon, label: "YouTube", url: "#" },
-  { icon: pinterestIcon, label: "Pinterest", url: "#" },
-  { icon: whatsappIcon, label: "WhatsApp", url: "https://wa.me/51994733630?text=quiero%20un%20gas%20porfavor" },
+  { icon: "/assets/svg/facebook.svg", label: "Facebook", url: "https://www.facebook.com/profile.php?id=61574092783362" },
+  { icon: "/assets/svg/instagram.svg", label: "Instagram", url: "https://www.instagram.com/distribuidorsolgasperu/" },
+  { icon: "/assets/svg/twitter-alt.svg", label: "Twitter", url: "#" },
+  { icon: "/assets/svg/youtube.svg", label: "YouTube", url: "#" },
+  { icon: "/assets/svg/pinterest.svg", label: "Pinterest", url: "#" },
+  { icon: "/assets/svg/whatsapp.svg", label: "WhatsApp", url: "https://wa.me/51994733630?text=quiero%20un%20gas%20porfavor" },
 ];
 
 const Footer: FC = () => {
@@ -48,7 +41,7 @@ const Footer: FC = () => {
     <footer className="footer-apple">
       <div className="footer-content">
         <div className="footer-logo-row">
-          <img src={logoFooter} alt="Solgas logo" className="footer-logo" />
+          <img src="/assets/svg/logo-footer.svg" alt="Solgas logo" className="footer-logo" />
         </div>
         <div className="footer-links-row">
           {footerLinks.map((col: FooterLink) => (

@@ -1,23 +1,24 @@
-import { useEffect } from 'react';
-import type { FC } from 'react';
-import gsap from 'gsap';
-import solgas10kg from '../assets/images/solgas10kg.webp';
-import solgas45kg from '../assets/images/solgas45kg.webp';
-import valvula from '../assets/images/valvula.webp';
-import surquilloImg from '../assets/images-distritos/surquillo.jpg';
-import surcoImg from '../assets/images-distritos/surco.jpg';
-import sanborjaImg from '../assets/images-distritos/sanborja.jpg';
-import sanisidroImg from '../assets/images-distritos/sanisidro.jpg';
-import lamolinaImg from '../assets/images-distritos/lamolina.jpg';
-import mirafloresImg from '../assets/images-distritos/miraflores.jpg';
-import chorrillosImg from '../assets/images-distritos/chorrillos.jpg';
-import pueblolibreImg from '../assets/images-distritos/pueblolibre.jpg';
-import jesusmariaImg from '../assets/images-distritos/jesusmaria.jpg';
-import magdalenadelmarImg from '../assets/images-distritos/magdalenadelmar.jpg';
-import linceImg from '../assets/images-distritos/lince.jpg';
-import '../styles/Productos.css';
+'use client';
 
-// Tipos para productos y distritos
+import { useEffect } from 'react';
+import gsap from 'gsap';
+// Imágenes - usando rutas absolutas desde public/
+const solgas10kg = '/assets/images/solgas10kg.webp';
+const solgas45kg = '/assets/images/solgas45kg.webp';
+const valvula = '/assets/images/valvula.webp';
+const surquilloImg = '/assets/images-distritos/surquillo.jpg';
+const surcoImg = '/assets/images-distritos/surco.jpg';
+const sanborjaImg = '/assets/images-distritos/sanborja.jpg';
+const sanisidroImg = '/assets/images-distritos/sanisidro.jpg';
+const lamolinaImg = '/assets/images-distritos/lamolina.jpg';
+const mirafloresImg = '/assets/images-distritos/miraflores.jpg';
+const chorrillosImg = '/assets/images-distritos/chorrillos.jpg';
+const pueblolibreImg = '/assets/images-distritos/pueblolibre.jpg';
+const jesusmariaImg = '/assets/images-distritos/jesusmaria.jpg';
+const magdalenadelmarImg = '/assets/images-distritos/magdalenadelmar.jpg';
+const linceImg = '/assets/images-distritos/lince.jpg';
+import '@/styles/Productos.css';
+
 interface Producto {
   nombre: string;
   img: string;
@@ -65,7 +66,7 @@ const distritos: ReadonlyArray<Distrito> = [
   { nombre: 'Lince', img: linceImg },
 ];
 
-const Productos: FC = () => {
+export default function ProductosPage() {
   useEffect(() => {
     gsap.fromTo(
       '.cobertura-card',
@@ -119,6 +120,5 @@ const Productos: FC = () => {
       </section>
     </div>
   );
-};
+}
 
-export default Productos;
