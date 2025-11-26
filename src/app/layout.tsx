@@ -87,6 +87,17 @@ export const metadata: Metadata = {
   alternates: {
     canonical: siteUrl,
   },
+  icons: {
+    icon: [
+      { url: '/icono-solgas-color.png', sizes: '512x512', type: 'image/png' },
+      { url: '/icono-solgas-color.png', sizes: '192x192', type: 'image/png' },
+      { url: '/icono-solgas-color.png', sizes: '32x32', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/icono-solgas-color.png', sizes: '180x180', type: 'image/png' },
+    ],
+    shortcut: '/icono-solgas-color.png',
+  },
   verification: {
     // Agregar códigos de verificación cuando estén disponibles
     // google: 'tu-codigo-google',
