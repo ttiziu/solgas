@@ -133,44 +133,90 @@
     margin: 0 0 24px 0;
   }
   .benefits-subtitle {
-    font-size: 1.3rem;
-    margin-bottom: 32px;
+    font-size: 1.5rem;
+    margin-bottom: 36px;
   }
   .benefits-horizontal {
     display: flex;
+    flex-direction: column;
     flex-wrap: nowrap;
-    overflow-x: auto;
-    overflow-y: hidden;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    gap: 16px;
-    padding: 0 4vw 8px 4vw;
+    overflow: visible;
+    gap: 2rem;
+    padding: 0 5vw;
+    align-items: stretch;
   }
   .benefit-card {
-    min-width: 240px;
-    max-width: 260px;
-    padding: 0 8px;
+    width: 100%;
+    max-width: 100%;
+    min-width: unset;
+    padding: 0;
     align-items: center;
+    text-align: center;
+  }
+  .benefit-icon {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 20px;
+  }
+  .benefit-icon img,
+  .benefit-icon-img {
+    width: 32px;
+    height: 32px;
+  }
+  .benefit-title {
+    font-size: 1.35rem;
+    margin-bottom: 14px;
+    text-align: center;
+  }
+  .benefit-text {
+    font-size: 1.1rem;
     text-align: center;
   }
 }
 
 @media (max-width: 600px) {
   .benefits-section {
-    padding: 24px 0 48px 0;
+    padding: 28px 0 52px 0;
     margin: 0 0 20px 0;
   }
   .benefits-subtitle {
-    font-size: 1.05rem;
-    margin-bottom: 24px;
+    font-size: 1.4rem;
+    margin-bottom: 28px;
   }
   .benefits-horizontal {
-    gap: 12px;
-    padding: 0 3vw 8px 3vw;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    overflow: visible;
+    gap: 1.5rem;
+    padding: 0 4vw;
+    align-items: stretch;
   }
   .benefit-card {
-    min-width: 220px;
-    max-width: 240px;
-    padding: 0 4px;
+    width: 100%;
+    max-width: 100%;
+    min-width: unset;
+    padding: 0;
+    align-items: center;
+    text-align: center;
+  }
+  .benefit-icon {
+    width: 68px;
+    height: 68px;
+    margin-bottom: 22px;
+  }
+  .benefit-icon img,
+  .benefit-icon-img {
+    width: 34px;
+    height: 34px;
+  }
+  .benefit-title {
+    font-size: 1.3rem;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+  .benefit-text {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    text-align: center;
   }
 }

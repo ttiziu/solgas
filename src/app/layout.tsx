@@ -3,6 +3,7 @@ import Script from 'next/script';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import NavigationLoader from '@/components/NavigationLoader';
+import WhatsAppButton from '@/components/WhatsAppButton';
 import '@/styles/globals.css';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://solgas-surquillo.vercel.app';
@@ -134,6 +135,7 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
+        <WhatsAppButton />
       </body>
     </html>
   );
