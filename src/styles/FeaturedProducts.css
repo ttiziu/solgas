@@ -1,0 +1,203 @@
+.featured-products-section {
+  width: 100%;
+  padding: 60px 0 80px 0;
+  margin: 0;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.featured-products-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #00254b;
+  text-align: center;
+  margin-bottom: 48px;
+  font-family: 'Inter', Arial, sans-serif;
+  letter-spacing: -1px;
+  opacity: 0;
+  transform: translateY(40px) scale(0.98);
+  transition: opacity 1.1s cubic-bezier(0.4, 0, 0.2, 1), transform 1.1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.featured-products-title.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.featured-products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2vw;
+  width: 100%;
+}
+
+.featured-product-card {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 2px 16px 0 rgba(34, 65, 97, 0.07);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1.5s cubic-bezier(0.4, 0, 0.2, 1), transform 1.5s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
+}
+
+.featured-product-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.featured-product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 24px 0 rgba(34, 65, 97, 0.15);
+}
+
+.featured-product-image-wrapper {
+  width: 100%;
+  height: 420px;
+  background: #f9fafb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 20px 20px 0 0;
+}
+
+.featured-product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  padding: 0;
+  transition: transform 0.3s ease;
+  border-radius: 20px 20px 0 0;
+}
+
+.featured-product-card:hover .featured-product-image {
+  transform: scale(1.05);
+}
+
+.featured-product-content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.featured-product-name {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #00254b;
+  margin-bottom: 12px;
+  font-family: 'Inter', Arial, sans-serif;
+}
+
+.featured-product-description {
+  color: #7b8591;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-family: 'Inter', Arial, sans-serif;
+  flex-grow: 1;
+}
+
+.featured-product-button {
+  background: #EF7F1A;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 12px 24px;
+  border-radius: 2rem;
+  text-align: center;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease;
+  display: inline-block;
+  width: fit-content;
+  align-self: flex-start;
+}
+
+.featured-product-button:hover {
+  background: #d96e13;
+  transform: translateX(4px);
+}
+
+.featured-product-button:active {
+  transform: translateX(2px);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .featured-products-section {
+    padding: 48px 0 64px 0;
+  }
+
+  .featured-products-title {
+    font-size: 1.5rem;
+    margin-bottom: 36px;
+  }
+
+  .featured-products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    padding: 0 4vw;
+    max-width: 100%;
+  }
+
+  .featured-product-image-wrapper {
+    height: 340px;
+  }
+
+  .featured-product-content {
+    padding: 20px;
+  }
+
+  .featured-product-name {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .featured-products-section {
+    padding: 40px 0 56px 0;
+  }
+
+  .featured-products-title {
+    font-size: 1.3rem;
+    margin-bottom: 28px;
+  }
+
+  .featured-products-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0 4vw;
+  }
+
+  .featured-product-image-wrapper {
+    height: 380px;
+  }
+
+  .featured-product-content {
+    padding: 18px;
+  }
+
+  .featured-product-name {
+    font-size: 1.1rem;
+  }
+
+  .featured-product-description {
+    font-size: 0.95rem;
+  }
+
+  .featured-product-button {
+    width: 100%;
+    text-align: center;
+  }
+}
+

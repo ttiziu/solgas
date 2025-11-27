@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Hero from '@/components/Hero';
 import Brands from '@/components/Brands';
 import BenefitsCarousel from '@/components/BenefitsCarousel';
+import FeaturedProducts from '@/components/FeaturedProducts';
 import Testimonials from '@/components/testimonials/Testimonials';
 import FAQ from '@/components/FAQ';
 
@@ -49,6 +50,7 @@ export default function HomePage() {
       <Hero />
       <Brands />
       <BenefitsCarousel />
+      <FeaturedProducts />
       <Testimonials />
       <FAQ />
     </main>
