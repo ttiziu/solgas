@@ -4,7 +4,7 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://solgas-surquillo.ve
 
 export const metadata: Metadata = {
   title: 'Contacto Solgas Surquillo - Solicita tu Gas Ahora | Distribuidor Autorizado',
-  description: 'Contacta con Solgas Surquillo, distribuidor autorizado de gas. Llámanos al 994 733 630 o escríbenos por WhatsApp. Entrega rápida de gas doméstico e industrial Solgas en Surquillo y distritos aledaños.',
+  description: 'Contacta con Solgas Surquillo, distribuidor autorizado de gas. Llámanos al 964 691 611 o escríbenos por WhatsApp. Entrega rápida de gas doméstico e industrial Solgas en Surquillo y distritos aledaños.',
   keywords: [
     'Solgas',
     'contacto Solgas',
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: 'Contacto - Solicita tu Gas Ahora | Solgas Surquillo',
-    description: 'Contacta con Solgas Surquillo. Llámanos al 994 733 630 o escríbenos por WhatsApp.',
+    description: 'Contacta con Solgas Surquillo. Llámanos al 964 691 611 o escríbenos por WhatsApp.',
     url: `${siteUrl}/contacto`,
     images: [
       {

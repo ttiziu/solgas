@@ -33,7 +33,7 @@ const socialLinks: ReadonlyArray<SocialLink> = [
   { icon: "/assets/svg/twitter-alt.svg", label: "Twitter", url: "#" },
   { icon: "/assets/svg/youtube.svg", label: "YouTube", url: "#" },
   { icon: "/assets/svg/pinterest.svg", label: "Pinterest", url: "#" },
-  { icon: "/assets/svg/whatsapp.svg", label: "WhatsApp", url: "https://wa.me/51994733630?text=quiero%20un%20gas%20porfavor" },
+  { icon: "/assets/svg/whatsapp.svg", label: "WhatsApp", url: "https://wa.me/51964691611?text=quiero%20un%20gas%20porfavor" },
 ];
 
 const Footer: FC = () => {

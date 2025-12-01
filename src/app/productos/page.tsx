@@ -95,7 +95,7 @@ export default function ProductosPage() {
               <div className="producto-desc producto-desc-responsive">{p.descripcion}</div>
               <a
                 className="producto-btn"
-                href="https://wa.me/51994733630"
+                href="https://wa.me/51964691611"
                 target="_blank"
                 rel="noopener noreferrer"
               >

@@ -4,7 +4,7 @@ import type { FC } from 'react';
 import '@/styles/WhatsAppButton.css';
 
 const WhatsAppButton: FC = () => {
-  const whatsappUrl = 'https://wa.me/51994733630?text=Hola,%20quiero%20solicitar%20gas%20por%20favor';
+  const whatsappUrl = 'https://wa.me/51964691611?text=Hola,%20quiero%20solicitar%20gas%20por%20favor';
 
   return (
     <a

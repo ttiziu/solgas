@@ -107,7 +107,7 @@ const FeaturedProducts: FC = () => {
               <h3 className="featured-product-name">{product.nombre}</h3>
               <p className="featured-product-description">{product.descripcion}</p>
               <a
-                href={`https://wa.me/51994733630?text=${encodeURIComponent(product.whatsappMessage)}`}
+                href={`https://wa.me/51964691611?text=${encodeURIComponent(product.whatsappMessage)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="featured-product-button"

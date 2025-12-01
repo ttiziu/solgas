@@ -71,7 +71,7 @@ const Header: FC = () => {
         >
           <img src="/assets/svg/menu-hamburguesa.svg" alt="Menú" className="header__menu-icon" />
         </button>
-        <a href="tel:+51994733630" className="header__call-link">
+        <a href="tel:+51964691611" className="header__call-link">
           <button className="header__call-btn" type="button">
             <span className="header__icon-container"><img src="/assets/svg/llamada.svg" alt="Llamar" className="header__icon" /></span>
             Llamar

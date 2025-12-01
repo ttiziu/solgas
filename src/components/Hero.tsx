@@ -10,7 +10,7 @@ import '@/styles/Hero.css';
 const Hero: FC = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const whatsappUrl =
-    'https://wa.me/51994733630?text=quiero%20un%20gas%20porfavor';
+    'https://wa.me/51964691611?text=quiero%20un%20gas%20porfavor';
 
   useEffect(() => {
     const hero = heroRef.current;
