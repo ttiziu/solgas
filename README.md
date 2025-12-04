@@ -4,7 +4,7 @@ Landing page moderna y responsiva para Solgas, desarrollada con Next.js 15, Reac
 
 ## 🚀 Demo en producción
 
-Accede a la página en :[solgasenlima](https://www.solgasenlima.pe/)
+Accede a la página en : [solgasenlima](https://www.solgasenlima.pe/)
 
 ## Características
 
